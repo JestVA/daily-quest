@@ -7,14 +7,48 @@
   <!-- Scripts to connect to React API here -->
   <script src="https://unpkg.com/react@16/umd/react.development.js" crossorigin></script>
   <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js" crossorigin></script>
+  <!-- load Babel to enable JSX -->
+  <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
   <!-- Load component -->
-  <script src="app.js"></script>
+  <script type="text/babel">
+      class MyComponent extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      itemCount: 0
+    };
+    // typing it this way makes a lot of sense
+    this.addItem =
+    this.addItem.bind(this)
+    // binding "this" on a class method in the constructor
+  }
+  addItem() {
+    this.setState({
+      itemCount: this.state.itemCount + 1
+    });
+  }
+  render() {
+    return (
+      <div>
+        { /* change code below this line */ }
+        <button onClick={this.addItem}>Click Me</button>
+        { /* change code above this line */ }
+        <h1>Finger trained: {this.state.itemCount}</h1>
+      </div>
+    );
+  }
+};
+
+ReactDOM.render(<MyComponent />, document.querySelector('#MyComponent'))
+  
+  </script>
+  <!-- <script src="app.js"></script> -->
   <title>Finger Trainer</title>
 </head>
 <body>
   <h1>Finger Trainer</h1>
-  <h3>Train your finger with this finger training specialized course.</h2>
+  <h3>Train your finger with this finger training specialized app.</h2>
   <div id="MyComponent"></div>
-  
+
 </body>
 </html>
