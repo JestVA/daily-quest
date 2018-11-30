@@ -28,4 +28,6 @@ class MyComponent extends React.Component {
   }
 };
 
+export default MyComponent
+
 ReactDOM.render(<MyComponent />, document.querySelector('#MyComponent'))
