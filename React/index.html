@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="style.css">
   <!-- Scripts to connect to React API here -->
   <script src="https://unpkg.com/react@16/umd/react.development.js" crossorigin></script>
   <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js" crossorigin></script>
@@ -36,11 +37,11 @@ class MyComponent extends React.Component {
   }
   render() {
     return (
-      <div>
+      <div className="div-wrapper">
         { /* change code below this line */ }
-        <button onClick={this.addItem}>Click Me</button>
+        <button className="action-button" onClick={this.addItem}>Click Me</button>
         { /* change code above this line */ }
-        <h1>Finger trained: {this.state.itemCount}</h1>
+        <h2>Fingers trained: {this.state.itemCount}</h2>
       </div>
     );
   }
@@ -51,7 +52,7 @@ ReactDOM.render(<MyComponent />, document.querySelector('#MyComponent'))
 
 </script>
 
-  <h1>Finger Trainer</h1>
+  <h1>Finger Trainer 	&#x1F446</h1>
   <h3>Train your finger with this finger training specialized app.</h2>
   <div id="MyComponent"></div>
 

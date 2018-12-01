@@ -1,0 +1,31 @@
+body {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-content: center;
+  align-items: center;
+  padding: 2rem;
+}
+
+
+
+#MyComponent {
+  background-color: aquamarine;
+  display: flex;
+  justify-content: center;
+}
+
+h1 {
+  color: blue;
+}
+
+.div-wrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.action-button {
+  font-size: 32px;
+  justify-content: center;
+}
