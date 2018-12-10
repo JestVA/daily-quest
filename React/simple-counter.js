@@ -53,3 +53,6 @@ reset() {
     );
   }
 };
+
+// Add a render method to the component. Call it with the html ID of your div.  
+// ReactDOM.render(<Counter />, document.querySelector('#mydiv'))
