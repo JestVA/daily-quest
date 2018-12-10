@@ -31,6 +31,16 @@ decrement() {
     count: this.state.count - 1
   })
 }
+
+// Cannot link directly to constructor
+// Have to find another way to implement "reset"
+// yay! figured it out, passed the objects property count initialized with 0 as JS code for the setState function parameter :D 
+
+
+
+reset() {
+  this.setState({count: 0})
+}
   // change code above this line
   render() {
     return (
