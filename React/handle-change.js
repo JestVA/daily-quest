@@ -5,11 +5,16 @@ class ControlledInput extends React.Component {
       input: ''
     };
     // change code below this line
-
+    this.handleChange =
+    this.handleChange.bind(this)
     // change code above this line
   }
   // change code below this line
-
+  handleChange = (event) => {
+      this.setState({
+        input: this.event.target.value
+      }) 
+  }
   // change code above this line
   render() {
     return (
