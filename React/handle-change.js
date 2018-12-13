@@ -12,7 +12,7 @@ class ControlledInput extends React.Component {
   // change code below this line
   handleChange = (event) => {
       this.setState({
-        input: this.event.target.value
+        input: event.target.value
       }) 
   }
   // change code above this line
@@ -20,7 +20,7 @@ class ControlledInput extends React.Component {
     return (
       <div>
         { /* change code below this line */}
-
+        <input value={this.state.value} onChange={this.handleChange.bind(this)}></input>
         { /* change code above this line */}
         <h4>Controlled Input:</h4>
         <p>{this.state.input}</p>
