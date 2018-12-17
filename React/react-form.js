@@ -15,7 +15,9 @@ class MyForm extends React.Component {
   }
   handleSubmit(event) {
     // change code below this line
-
+    this.setState({
+      input: this.state.input
+    })
     // change code above this line
   }
   render() {
@@ -23,12 +25,12 @@ class MyForm extends React.Component {
       <div>
         <form onSubmit={this.handleSubmit}>
           { /* change code below this line */ }
-
+          <input value={this.state.input} onChange={this.handleChange}></input>
           { /* change code above this line */ }
           <button type='submit'>Submit!</button>
         </form>
         { /* change code below this line */ }
-
+        <h1>{this.state.submit}</h1>
         { /* change code above this line */ }
       </div>
     );
