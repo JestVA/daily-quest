@@ -15,8 +15,9 @@ class MyForm extends React.Component {
   }
   handleSubmit(event) {
     // change code below this line
+    event.preventDefault()
     this.setState({
-      input: this.state.input
+      submit: this.state.input
     })
     // change code above this line
   }
