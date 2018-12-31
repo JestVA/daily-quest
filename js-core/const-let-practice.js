@@ -1,7 +1,7 @@
 
 // Can you guess what's inside this function?
 
-const GREETING = function holidayMix(sentence) { 
+const GREETING =  (sentence) => { 
     const stringIn = ', New Year\'s Eve is here!'
     const MESSAGE = `${sentence}${stringIn}`
         for (let i = 0; i < stringIn.length; i += 10) {
