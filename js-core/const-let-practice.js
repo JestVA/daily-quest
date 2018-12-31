@@ -1,4 +1,6 @@
 
+// Can you guess what's inside this function?
+
 const GREETING = function(sentence) { 
     const stringIn = ', New Year\'s Eve is here!'
     const MESSAGE = `${sentence}${stringIn}`
@@ -10,4 +12,11 @@ const GREETING = function(sentence) {
 GREETING('Let\'s party')
 
 
+/**
 
+It prints:
+Let's party, New Year's Eve is here!
+Let's party, New Year's Eve is here!
+Let's party, New Year's Eve is here!
+
+**/
