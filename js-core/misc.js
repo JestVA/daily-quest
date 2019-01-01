@@ -23,11 +23,16 @@ const AVG_TEMPERATURES = {
   function getTempOfTmrw(avgTemperatures) {
     "use strict";
     // change code below this line
-    const {tomorrow: tempOfTomorrow} = AVG_TEMPERATURES;
-    // change code above this line
+    const {tomorrow: tempOfTomorrow} = avgTemperatures; // this line was very tricky, I was not destructuring 
+    // what should have been destructured, the parameter passed in the getTempOfTmrw function. 
     return tempOfTomorrow;
   }
+  
   console.log(getTempOfTmrw(AVG_TEMPERATURES)); // should be 79
+ // Prefer the use of spread operator to call variadic functions
+const x = [1, 2, 3, 4, 5];
+console.log(...x);
+
 // Use Destructuring Assignment to Assign Variables from Nested Objects
 
 // Use Destructuring Assignment to Assign Variables from Arrays
