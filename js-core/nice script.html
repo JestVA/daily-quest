@@ -3,9 +3,13 @@
 	<title>Console tricks!</title>
 </head>
 <body>
-	<p onClick="makeOrange()">**SOOPER-HACKS**</p>
+	
+	<p onClick="makeOrange()">**SUPER-HACKS**</p>
+	
 	<script type="text/javascript">
-		
+		const dogs = [{ name: 'Snickers', age: 2 }, { 
+			name: 'Twix', age: 212 }]
+			const dog = { name: 'Snickers', age: 2}
 
 
 		const makeOrange = () => {
@@ -13,7 +17,22 @@
 			p.style.color = 'rgb(250, 172, 19)';
 			p.style.fontSize = '2rem';
 		}
+		console.log(dogs[1].age)
+		console.table(dogs)
 
+		// Regular 
+		console.log('text')
 
+		// Interpolated
+		console.log(`Hello, I am a big ${dog.age}, ${dog.name}`);
+		// Styled
+		console.log('%c Pretty cool', 'font-size:3rem; background: navy;')
+		// warning!
+		console.warn('ooops!')
+		// error
+		console.error('Crap!')
+		// Info
+		console.info('Crocodiles eat 3-4 people per year')
+		
 	</script>
 </body>
