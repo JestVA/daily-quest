@@ -8,3 +8,10 @@ const removeFirst = ourArray.shift()
 console.log(ourArray)
 const addFirstElement = ourArray.unshift('Happy')
 console.log(ourArray)
+// play with local scope 
+function thisIsLocalScope() {
+    const myConst = 5;
+    console.log(myConst);
+}
+thisIsLocalScope();
+console.log(myConst);
