@@ -53,6 +53,16 @@
 		// viewing DOM elements
 		console.log(p) // view DOM elements, and everything as long as it is defined as a variable
 		console.dir(p) // view all properties associated 
+		// grouping together 
+		dogs.forEach(dog => {
+			console.groupCollapsed(`${dog.name}`)
+			console.log(`This is ${dog.name}`)
+			console.log(`${dog.name} is ${dog.age * 3.14} years old`)
+			console.groupEnd(`${dog.name}`)
+		// awesome iteration over an object and logging of useful values using backticks and variable interpolation to produce cool effect.
+		})
+
+
 
 	</script>
 </body>
