@@ -53,3 +53,18 @@ function testStrict(val) {
     return 'Not equal'
 }
 testStrict('10')
+// practice comparing different values
+// comparison with the inequality operator != (does type conversion)
+// comparison with the strict inequality operator !==
+// Comparisons with the greater than / operators
+// Comparisons with the greater than or equal
+function testGreaterOrEqual(val) {
+    if (val >= 15) {
+        return '15 or over'
+    }
+    if (val >= 5) {
+        return '5 or over'
+    }
+    return 'less than 5'
+}
+testGreaterOrEqual(200)
