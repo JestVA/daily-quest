@@ -37,3 +37,19 @@ function trueOrFalse(wasItTrue) {
     return "No, that was false"
 }
 console.log(trueOrFalse(false))
+// Comparison with the equality operator
+function testEqual(val) {
+    if (val == 12) {
+        return 'Equal'
+    }
+    return 'Not equal'
+}
+testEqual(10)
+// Comparison with strict equality operator
+function testStrict(val) {
+    if (val === 10) {
+        return 'Equal'
+    }
+    return 'Not equal'
+}
+testStrict('10')
