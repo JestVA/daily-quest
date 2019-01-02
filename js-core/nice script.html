@@ -4,7 +4,7 @@
 </head>
 <body>
 	
-	<p onClick="makeOrange()">**SUPER-HACKS**</p>
+	<p class='pstyle' onClick="makeOrange()">**SUPER-HACKS**</p>
 	
 	<script type="text/javascript">
 		const dogs = [{ name: 'Snickers', age: 2 }, { 
@@ -33,6 +33,13 @@
 		console.error('Crap!')
 		// Info
 		console.info('Crocodiles eat 3-4 people per year')
-		
+		// Testing
+		const p = document.querySelector('p');
+		console.assert(p, true)
+		console.assert(p.classList.contains('pre'), 'That is wrong') // only works for failing assertions
+		// they only show up when they fail
+		// if condition is not failed, the ...data never happens
+		console.assert(p.classList.contains('pstyle'), 'That is right') // will not show
+
 	</script>
 </body>
