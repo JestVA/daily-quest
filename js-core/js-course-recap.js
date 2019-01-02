@@ -24,4 +24,16 @@ const testArr = [1, 2, 3, 4, 5]
 console.log(JSON.stringify(testArr))
 console.log(nextInLine(testArr, 'new value'))
 console.log('After: ' + JSON.stringify(testArr))
-
+// return Boolean function
+function booleans() {
+    return true
+}
+console.log(booleans())
+// return true if passed argument to function
+function trueOrFalse(wasItTrue) {
+    if (wasItTrue) {
+        return "Yes, that was true"
+    }
+    return "No, that was false"
+}
+console.log(trueOrFalse(false))
