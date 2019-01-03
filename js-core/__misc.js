@@ -58,6 +58,12 @@ let a = 8, b = 6;
 })();
 console.log(a); // should be 6
 console.log(b); // should be 8
+// use commas to pick array element when assigning variables via destructuring
+let test = [1, 2, 3, 4, 5, 6]
+let [,,a,, b] = test
+console.log(a) // 3
+console.log(b) // 5
+
 // Use Destructuring Assignment with the Rest Operator to Reassign Array Elements
 
 // Use Destructuring Assignment to Pass an Object as a Function's Parameters
