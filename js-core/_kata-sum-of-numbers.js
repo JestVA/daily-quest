@@ -13,6 +13,11 @@ const GetSum = (...args) => {
 }
 console.log(GetSum(9, 20)) // 174
 
+// nice solution that I did not think about while solving
+
+const GetSum = (a, b) => (Math.abs(a - b) + 1) * (a + b) / 2
+console.log(GetSum(7, -5))
+
 
 // ugly syntax
 function GetSum(a, b) {
