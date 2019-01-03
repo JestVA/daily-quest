@@ -68,3 +68,7 @@ function testGreaterOrEqual(val) {
     return 'less than 5'
 }
 testGreaterOrEqual(200)
+// comparison function with multiple ternary operators 
+const testLessOrEqual = (val) => val > 10 ? 'Larger than 10' : val == 10 ? 'Exactly ten' : 'Less than 10'
+
+
