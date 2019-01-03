@@ -65,6 +65,15 @@ console.log(a) // 3
 console.log(b) // 5
 
 // Use Destructuring Assignment with the Rest Operator to Reassign Array Elements
+const source = [1,2,3,4,5,6,7,8,9,10];
+function removeFirstTwo(list) {
+  // const [a, b, ...arr] = list; 
+  const [,, ...arr] = list; // also works
+  return arr;
+}
+const arr = removeFirstTwo(source);
+console.log(arr); // should be [3,4,5,6,7,8,9,10]
+console.log(source); // should be [1,2,3,4,5,6,7,8,9,10];
 
 // Use Destructuring Assignment to Pass an Object as a Function's Parameters
 
