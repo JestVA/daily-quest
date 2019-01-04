@@ -124,6 +124,25 @@ const makeList = (arr) => {
  **/
 const resultDisplayArray = makeList(result.failure);
 
+// Use a forEach to do the same thing 
+const result = {
+  success: ["max-length", "no-amd", "prefer-arrow-functions"],
+  failure: ["no-var", "var-on-top", "linebreak"],
+  skipped: ["id-blacklist", "no-dup-keys"]
+};
+const makeList = (arr) => {
+  let resultDisplayArray = []
+  arr.forEach(e => resultDisplayArray.push(`<li class="text-warning">${e}</li>`));
+  return resultDisplayArray
+}
+/**
+ * makeList(result.failure) should return:
+ * [ `<li class="text-warning">no-var</li>`,
+ *   `<li class="text-warning">var-on-top</li>`,
+ *   `<li class="text-warning">linebreak</li>` ]
+ **/
+const resultDisplayArray = makeList(result.failure);
+
 // Write Concise Object Literal Declarations Using Simple Fields
 
 // Write Concise Declarative Functions with ES6
