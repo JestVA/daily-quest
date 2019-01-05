@@ -249,3 +249,29 @@ const myStorage = {
 // Police: 'show me what you have in the trunk'
 // Me: not a problem, sir, here it is:
 myStorage.car.outside.trunk
+
+// access nested arrays
+
+const testArray = [
+    {
+        'type': 'flowers',
+        'list': [
+            'roses',
+            'tulips',
+            'bitcoins'
+        ]
+    },
+    {
+        'type': 'trees',
+        list: [      // keys without quotes '' are invalid in JSON
+            'pine',
+            'birch',
+            'Minecraft'
+        ]
+    }
+]
+
+// want to access 1. bitcoins and 2. Minecraft
+
+let bitcoins = testArray[0].list[2] // 'bitcoins'
+let minecraft = testArray[1].list[2] // 'Minecraft'
