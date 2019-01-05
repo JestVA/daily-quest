@@ -144,9 +144,31 @@ console.log(isLess(23, 12))
 // return early pattern from functions 
 
 const abTest = (a, b) => {
-    if (a < 0 || b < 0) {
+    if (a < 0 || b < 0) { // checks if negative and if true exits the function with a return of 'undefined'
         return undefined
     }
     return ~~Math.pow(Math.sqrt(a) + Math.sqrt(b), 2)
 }
 abTest(2, 2)
+
+// blackjack
+const countCards = card => {
+    let count = 0
+    switch(card) {
+        case 'A':
+        case 'K':
+        case 'J':
+        case 'Q':
+        case 10:
+            count--;
+            break;
+        case 1:
+        case 2:
+        case 3:
+        case 4:
+        case 5:
+            count++;
+            break;
+    }
+    return `${count} ${count >= 0 ? 'Hold Bet' : 'Bet'}` 
+}
