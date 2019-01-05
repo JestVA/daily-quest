@@ -144,7 +144,8 @@ const makeList = (arr) => {
 const resultDisplayArray = makeList(result.failure);
 
 // Write Concise Object Literal Declarations Using Simple Fields
-
+const createPerson = (name, age, gender) => ({name, age, gender})
+console.log(createPerson("Zodiac Hasbro", 56, "male")); 
 // Write Concise Declarative Functions with ES6
 
 // Use class Syntax to Define a Constructor Function
