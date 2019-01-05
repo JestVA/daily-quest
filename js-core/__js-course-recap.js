@@ -110,4 +110,43 @@ const fun = (c1, c2) => {
     }
 }
 console.log(fun(4, 3)) // robust
+// write another switch statement
+const caseInSwitch = (val) => {
+    let answer = [];
+    switch(val) {
+        case 1:
+            answer = 'alpha';
+            break // use break otherwise it loops through cases and returns last value 
+            console.log(answer)
+        case 2: 
+            answer = 'gamma';
+            break
+            console.log(answer)
+        case 3:
+            answer = 'tango'
+            break
+            console.log(answer)
+        case 4: 
+            answer = 'charlie'
+            break
+            console.log(answer)
+        default: 
+            answer = 'clever'
+    }
+    return answer
+}
+console.log(caseInSwitch(3)); // gamma
 
+// returning boolean values from functions withot verbose if statement 
+const isLess = (a, b) => a < b
+console.log(isLess(23, 12))
+
+// return early pattern from functions 
+
+const abTest = (a, b) => {
+    if (a < 0 || b < 0) {
+        return undefined
+    }
+    return ~~Math.pow(Math.sqrt(a) + Math.sqrt(b), 2)
+}
+abTest(2, 2)
