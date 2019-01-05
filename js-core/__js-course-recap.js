@@ -224,3 +224,12 @@ const lookUpValue = val => {
     return result;
 }
 console.log(lookUpValue('eu'))
+// check to see if an object has the property 
+const checkForProperty = checkProp => {
+    if (myObject.hasOwnProperty(checkProp)) {
+        return myObject[checkProp]
+    } else {
+        return 'Not Found'
+    }
+}
+console.log(lookUpValue('surface'))
