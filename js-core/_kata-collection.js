@@ -2,8 +2,6 @@
 const areYouPlayingBanjo = name => {
     switch (name.slice(0, 1)) {
       case 'R':
-        return `${name} plays banjo`
-        break
       case 'r':
         return `${name} plays banjo`
         break
