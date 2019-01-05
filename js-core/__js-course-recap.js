@@ -152,23 +152,30 @@ const abTest = (a, b) => {
 abTest(2, 2)
 
 // blackjack
+let count = 0 // must be declared outside the function
+// when the variable was declared in the function, each time you would call the function
+// it will boot with the default value, and not increment properly.
+// so it did not have to rely on function scope 
 const countCards = card => {
-    let count = 0
     switch(card) {
         case 'A':
         case 'K':
         case 'J':
         case 'Q':
         case 10:
-            count--;
+            --count;
             break;
-        case 1:
         case 2:
         case 3:
         case 4:
         case 5:
-            count++;
+            ++count;
             break;
     }
-    return `${count} ${count >= 0 ? 'Hold Bet' : 'Bet'}` 
+    return `${count} ${count >= 0 ? 'Bet' : 'Hold Bet'}` 
 }
+countCards(2); 
+countCards(4); 
+countCards(5); 
+countCards('J');  
+console.log(countCards(3)); // 3 Bet
