@@ -151,7 +151,7 @@ const abTest = (a, b) => {
 }
 abTest(2, 2)
 
-// blackjack
+// *** blackjack
 let count = 0 // must be declared outside the function
 // when the variable was declared in the function, each time you would call the function
 // it will boot with the default value, and not increment properly.
@@ -179,3 +179,48 @@ countCards(4);
 countCards(5); 
 countCards('J');  
 console.log(countCards(3)); // 3 Bet
+
+/*
+create an object
+*/
+
+const myObject = {
+    'surface': 'smooth',
+    'color': ['red', 'green', 'blue'],
+    'type of': 1,
+    20: 'maximum price'
+}
+// accessing the values with . notation
+const surfaceValue = myObject.surface;
+const colorChoice = myObject.color;
+// with bracket notation (must use if the properties have spaces inside the name)
+const typeOf = myObject['type of'];
+// access object properties with variables
+const surfaceType = 'surface';
+const surfaceTypeValue = myObject[surfaceType];
+const priceIndex = 20;
+const price = myObject[priceIndex];
+// updating object properties with dot notation
+myObject.color = 'blue'
+console.log(myObject.color)
+console.log(myObject['color'])
+// add new properties to an object 
+myObject.length = '20 cm'
+myObject['length'] = '40 cm!'
+// delete properties from objects 
+delete myObject.surface
+// using objects for lookups
+// create a lookup function
+const lookUpValue = val => {
+    let result = '';
+
+    const lookup = {
+        'eu': 'tu',
+        'el': 'ea',
+        'noi': 'ei'
+    };
+
+    result = lookup[val];
+    return result;
+}
+console.log(lookUpValue('eu'))
