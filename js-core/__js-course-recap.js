@@ -233,3 +233,19 @@ const checkForProperty = checkProp => {
     }
 }
 console.log(lookUpValue('surface'))
+
+// manipulating complex objects
+const myStorage = {
+    'car': {
+        'inside': {
+            'glove box': 'gun',
+            'passenger_seat': 'nothing'
+        },
+        'outside': {
+            'trunk': 'not_a_problem_anymore'
+        }
+    } 
+}
+// Police: 'show me what you have in the trunk'
+// Me: not a problem, sir, here it is:
+myStorage.car.outside.trunk
