@@ -70,5 +70,44 @@ function testGreaterOrEqual(val) {
 testGreaterOrEqual(200)
 // comparison function with multiple ternary operators 
 const testLessOrEqual = (val) => val > 10 ? 'Larger than 10' : val == 10 ? 'Exactly ten' : 'Less than 10'
+// reassigning test 
+const a = []
+const assertEquals = a => {
+    if (a == false) {
+        return true
+    }
+    if (!a == false) {
+        return true
+    }
+    if (!a == false) {
+        return true
+    }
+}
 
+// && logical 'and' operator
+// || logical 'or' operator
+// old 'else' example
+
+const testElse = val => {
+    let result = ''; // use let as I want to reassign value to this variable
+    if (val < 5) {
+        result += val;
+    } else {
+        result += val**val;
+    }
+    return result;
+}
+// Math.pow(5, 5)
+// golf code 
+const names = ['go home', 'go bust', 'robust'];
+const fun = (c1, c2) => {
+    if (c1 < c2) {
+        return names[0]
+    } else if (c1 == c2) {
+        return names[1]
+    } else {
+        return names[2]
+    }
+}
+console.log(fun(4, 3)) // robust
 
