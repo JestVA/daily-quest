@@ -233,6 +233,9 @@ let myString = "freeCodeCamp";
 let fccRegex = /freecodecamp/i; // Change this line
 let result = fccRegex.test(myString);
 // Extract Matches
+let extractStr = "Extract the word 'coding' from this string.";
+let codingRegex = /coding/i; // Change this line
+let result = extractStr.match(codingRegex); // Change this line
 // Find More Than the First Match
 // Match Anything with Wildcard Period
 // Match Single Character with Multiple Possibilities
