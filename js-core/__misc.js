@@ -237,6 +237,9 @@ let extractStr = "Extract the word 'coding' from this string.";
 let codingRegex = /coding/i; // Change this line
 let result = extractStr.match(codingRegex); // Change this line
 // Find More Than the First Match
+let twinkleStar = "Twinkle, twinkle, little star";
+let starRegex = /twinkle/ig; // Change this line
+let result = twinkleStar.match(starRegex); // Change this line
 // Match Anything with Wildcard Period
 // Match Single Character with Multiple Possibilities
 // Match Letters of the Alphabet
