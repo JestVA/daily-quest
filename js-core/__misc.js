@@ -265,6 +265,9 @@ let difficultSpelling = "Mississippi";
 let myRegex = /s+/g; // Change this line
 let result = difficultSpelling.match(myRegex);
 // Match Characters that Occur Zero or More Times
+let chewieQuote = "Aaaaaaaaaaaaaaaarrrgh!";
+let chewieRegex = /Aa*/; // Change this line
+let result = chewieQuote.match(chewieRegex);
 // Find Characters with Lazy Matching
 // Find One or More Criminals in a Hunt
 // Match Beginning String Patterns
