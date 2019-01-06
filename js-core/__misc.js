@@ -270,7 +270,8 @@ let chewieRegex = /Aa*/; // Change this line
 let result = chewieQuote.match(chewieRegex);
 // Find Characters with Lazy Matching
 let text = "<h1>Winter is coming</h1>";
-let myRegex = /<.*?>/; // Change this line
+let myRegex = /<.*?>/; // If I wanted to select the second </h1> closing h1 tag the regex would've looked like this:
+// /<\/.*?>/ (escaping the forward dash before, and 'matching' ''everything' with a lazy match as opposed to greedy) 
 let result = text.match(myRegex);
 // Find One or More Criminals in a Hunt
 // Match Beginning String Patterns
