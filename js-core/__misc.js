@@ -217,6 +217,9 @@ subtract(7,4);
 // Regular Expressions
 // Introduction to the Regular Expression Challenges
 // Using the Test Method
+let myString = "Hello, World!";
+let myRegex = /Hello/;
+let result = myRegex.test(myString); // Change this line
 // Match Literal Strings
 // Match a Literal String with Different Possibilities
 // Ignore Case While Matching
