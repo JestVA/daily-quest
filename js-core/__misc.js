@@ -274,6 +274,11 @@ let myRegex = /<.*?>/; // If I wanted to select the second </h1> closing h1 tag 
 // /<\/.*?>/ (escaping the forward dash before, and 'matching' ''everything' with a lazy match as opposed to greedy) 
 let result = text.match(myRegex);
 // Find One or More Criminals in a Hunt
+// example crowd gathering
+let crowd = 'P1P2P3P4P5P6CCCP7P8P9';
+let reCriminals = /C+/; 
+let matchedCriminals = crowd.match(reCriminals);
+console.log(matchedCriminals);
 // Match Beginning String Patterns
 // Match Ending String Patterns
 // Match All Letters and Numbers
