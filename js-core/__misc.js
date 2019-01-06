@@ -169,6 +169,31 @@ console.log(carrot.name); // => should be 'carrot'
 
 // Use getters and setters to Control Access to an Object
 
+function makeClass() {
+  "use strict";
+  class Thermostat {
+    constructor(temperature) {
+      this._temperature = temperature
+    }
+    // getter
+    get celsius() {
+      return 5 / 9 * (this._temperature - 32)
+    }
+    // setter 
+    set celsius(celsiusTemperature) {
+      this._temperature = celsiusTemperature * 9 / 5 + 32
+    }
+  
+  }
+  return Thermostat;
+}
+const Thermostat = makeClass();
+const thermos = new Thermostat(76); // setting in Fahrenheit scale
+let temp = thermos.temperature; // 24.44 in C
+thermos.temperature = 26;
+temp = thermos.temperature; // 26 in C
+console.log(temp)
+
 // Understand the Differences Between import and require
 
 // Use export to Reuse a Code Block
