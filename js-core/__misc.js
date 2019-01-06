@@ -207,7 +207,7 @@ export const bar = "foo";
 // can also export as export { foo, bar }
 
 // Use * to Import Everything from a File
-
+import * as myCoolStrings from "capitalize_strings"; 
 // Create an Export Fallback with export default
 // Import a Default Export
 // Regular Expressions
