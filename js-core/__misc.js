@@ -280,6 +280,9 @@ let reCriminals = /C+/;
 let matchedCriminals = crowd.match(reCriminals);
 console.log(matchedCriminals);
 // Match Beginning String Patterns
+let rickyAndCal = "Cal and Ricky both like racing.";
+let calRegex = /^Cal/; // Change this line
+let result = calRegex.test(rickyAndCal);
 // Match Ending String Patterns
 // Match All Letters and Numbers
 // Match Everything But Letters and Numbers
