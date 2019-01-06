@@ -201,6 +201,10 @@ import { capitalizeString } from 'string_functions'
 console.log(capitalizeString("hello!"));
 
 // Use export to Reuse a Code Block
+"use strict";
+export const foo = "bar";
+export const bar = "foo";
+// can also export as export { foo, bar }
 
 // Use * to Import Everything from a File
 
