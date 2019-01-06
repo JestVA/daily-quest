@@ -229,6 +229,9 @@ let petString = "James has a pet cat.";
 let petRegex = /dog|cat|bird|fish/; // Change this line
 let result = petRegex.test(petString);
 // Ignore Case While Matching
+let myString = "freeCodeCamp";
+let fccRegex = /freecodecamp/i; // Change this line
+let result = fccRegex.test(myString);
 // Extract Matches
 // Find More Than the First Match
 // Match Anything with Wildcard Period
