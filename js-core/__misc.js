@@ -147,7 +147,13 @@ const resultDisplayArray = makeList(result.failure);
 const createPerson = (name, age, gender) => ({name, age, gender})
 console.log(createPerson("Zodiac Hasbro", 56, "male")); 
 // Write Concise Declarative Functions with ES6
-
+const bicycle = {
+  gear: 2,
+  setGear(ear) {return this.gear = ear}
+  
+};
+bicycle.setGear(3);
+console.log(bicycle.gear);
 // Use class Syntax to Define a Constructor Function
 
 // Use getters and setters to Control Access to an Object
