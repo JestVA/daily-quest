@@ -209,6 +209,7 @@ export const bar = "foo";
 // Use * to Import Everything from a File
 import * as myCoolStrings from "capitalize_strings"; 
 // Create an Export Fallback with export default
+export default function subtract(x,y) {return x - y;}
 // Import a Default Export
 // Regular Expressions
 // Introduction to the Regular Expression Challenges
