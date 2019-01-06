@@ -288,12 +288,26 @@ let caboose = "The last car on a train is the caboose";
 let lastRegex = /caboose$/; // Change this line
 let result = lastRegex.test(caboose);
 // Match All Letters and Numbers
+let quoteSample = 'I like learning Regex'
 let alphabetRegexV2 = /\w/g; // Change this line
 let result = quoteSample.match(alphabetRegexV2).length;
 // \w is called shorthand character class
 
 // Match Everything But Letters and Numbers
+let quoteSample = "The five boxing wizards jump quickly.";
+let nonAlphabetRegex = /\W/g; // Change this line
+let result = quoteSample.match(nonAlphabetRegex).length;
+// you just use the \W with capital letter to do the opposite of \w and the same as /[^a-z0-9]/ig
+// remember to use global to properly count all occurences
+
+
 // Match All Numbers
+let numString = "Your sandwich will be $5.00";
+let numRegex = /\d/g; // Change this line
+let result = numString.match(numRegex).length;
+console.log(result) // 3
+// shorthand nontation \d
+
 // Match All Non-Numbers
 // Restrict Possible Usernames
 // Match Whitespace
