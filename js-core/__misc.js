@@ -249,6 +249,9 @@ let quoteSample = "Beware of bugs in the above code; I have only proved it corre
 let vowelRegex = /[aeiou]/ig; // Change this line
 let result = quoteSample.match(vowelRegex); // Change this line
 // Match Letters of the Alphabet
+let quoteSample = "The quick brown fox jumps over the lazy dog.";
+let alphabetRegex = /[a-z]/ig; // Change this line
+let result = quoteSample.match(alphabetRegex); // Change this line
 // Match Numbers and Letters of the Alphabet
 // Match Single Characters Not Specified
 // Match Characters that Occur One or More Times
