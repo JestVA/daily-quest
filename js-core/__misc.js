@@ -211,6 +211,9 @@ import * as myCoolStrings from "capitalize_strings";
 // Create an Export Fallback with export default
 export default function subtract(x,y) {return x - y;}
 // Import a Default Export
+import subtract from "math_functions"
+"use strict";
+subtract(7,4);
 // Regular Expressions
 // Introduction to the Regular Expression Challenges
 // Using the Test Method
