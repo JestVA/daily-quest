@@ -16,7 +16,9 @@ const areYouPlayingBanjo = name => name +  (name[0].toLowerCase() == 'r' ? ' pla
 
 // include regular expression 
 
-'Dorin'.match(/^d/i) // evaluates if both 'd' or 'D' are the first letter of string
+'Dorin'.match(/^d/i) // evaluates if both 'd' or 'D' (i flag) match string beginning pattern (^)
+// in this case regEx.test(string) would have worked as well (in fact, better) I think less memory would be used to return a boolean statement than a matched expression in an Array
+//                                 /^r/i.test(n)
 const areYouPlayingBanjo = n => n+(n.match(/^r/i) ? ' plays' : ' does not play') + ' banjo';
 
 /*
