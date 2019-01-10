@@ -401,3 +401,22 @@ function checkSign(num) {
     return num > 0 ? "positive" : num < 0 ? "negative" : "zero"
 }
 console.log(checkSign(0));
+
+// preventing object mutations 
+
+function freezeObj() {
+    const MATH_CONSTANTS = {
+        PI: 3.14
+    };
+
+    Object.freeze(MATH_CONSTANTS);
+
+    try {
+      MATH_CONSTANTS.PI = 100;
+    } catch(err) {
+      console.log(err);
+    }
+    return MATH_CONSTANTS.PI;
+}
+
+const PI = freezeObj()
