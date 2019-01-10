@@ -448,3 +448,17 @@ const increment = (() => (number, value = 1) => number + value)();
 console.log(increment(5, 2));
 console.log(increment(5))
 
+// use rest with function parameters
+const sum = (function() {
+  return function  sum(...args) {
+    return args.reduce((a, b) => a + b);
+  }})()
+  console.log(sum(1, 2, 3, 5))
+// refactor
+const sum = (() => (...args) => {
+  return args.reduce((a, b) => a + b, 0);
+})()
+console.log(sum(12, 21))
+// refactor
+const sum = (() => (...args) => args.reduce((a, b) => a + b, 0))()
+console.log(sum(12, 21))
