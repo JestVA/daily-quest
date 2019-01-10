@@ -521,3 +521,55 @@ try {
   console.log('I will always run')
 }
 console.log('script continues and life as well')
+
+// closures
+
+const counter = (function() {
+  let privateCounter = 0;
+  function changeBy(val) {
+    privateCounter += val;
+  }
+  return {
+    increment: function() {
+      changeBy(1);
+    },
+    decrement: function() {
+      changeBy(-1);
+    },
+    value: function() {
+      return privateCounter;
+    }
+  };
+})();
+console.log(counter.value());
+counter.increment();
+counter.increment();
+console.log(counter.value());
+counter.decrement();
+console.log(counter.value());
+
+// Refactor above code
+
+const counter = (() => {
+  let privateCounter = 0;
+  let changeBy = val => {
+    privateCounter += val;
+  }
+  return {
+    increment: () => {
+      changeBy(1);
+    },
+    decrement: () => {
+      changeBy(-1);
+    },
+    value: () => {
+      return privateCounter;
+    }
+  };
+})();
+console.log(counter.value());
+counter.increment();
+counter.increment();
+console.log(counter.value());
+counter.decrement();
+console.log(counter.value());
