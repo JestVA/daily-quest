@@ -375,3 +375,17 @@ const rangeNumbers = (myMin, myMax) => {
     return Math.floor(Math.random() * (myMax - myMin + 1) + myMin);
 }
 console.log(rangeNumbers(0, 10))
+
+// use the parseInt function 
+
+
+function convertToInt(str) {
+    return parseInt(str);
+}
+console.log(convertToInt('1987lala'))
+
+// use parseInt with radix 
+function convertToInteger(str) {
+    return parseInt(str, 2);
+}
+console.log(convertToInteger("1000"))
