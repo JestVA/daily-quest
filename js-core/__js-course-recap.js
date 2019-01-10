@@ -462,3 +462,49 @@ console.log(sum(12, 21))
 // refactor
 const sum = (() => (...args) => args.reduce((a, b) => a + b, 0))()
 console.log(sum(12, 21))
+
+// use spread operator to evaluate arrays in place 
+arr2 = [...arr1];
+// destructuring assignment to assign variables from objects
+// creating tag functions with template literals
+// basic example
+const name = ['Zodiac', 56]
+function greet() {
+  console.log(arguments[0]);
+  console.log(arguments[1]);
+  console.log(arguments[2]);
+}
+greet`I'm ${name[0]} and I'm ${name[1]} years old`
+
+// more interesting example
+function greet2(arr, nameArg, ageArg) {
+  console.log(arr[0] + nameArg + arr[1] + ageArg + arr[2])
+}
+
+greet2`woah, are you ${name[0]} and ${name[1]} years old?`
+
+console.log(name.join``) // neat trick to pass the empty string
+
+// even better
+const people = [
+  {
+    name: "Michael",
+    age: 5
+  },
+  {
+    name: "Jane",
+    age: 4
+  },
+  {
+    name: "Zola",
+    age: 4.5
+  }
+]
+
+function greet3(arr, n, a) {
+  console.log(arr[0] + n + arr[1] + a + arr[2])
+}
+
+people.forEach(p => {
+  greet3`Are you ${p.name} and ${p.age} years old?`
+})
