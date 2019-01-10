@@ -389,3 +389,15 @@ function convertToInteger(str) {
     return parseInt(str, 2);
 }
 console.log(convertToInteger("1000"))
+
+// use conditional ternary operator
+
+const checkEqual = (a, b) => a === b ? true : false;
+console.log(checkEqual(2,2))
+
+// use nested conditionals with ternary operator
+
+function checkSign(num) {
+    return num > 0 ? "positive" : num < 0 ? "negative" : "zero"
+}
+console.log(checkSign(0));
