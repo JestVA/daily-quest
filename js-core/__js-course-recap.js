@@ -508,3 +508,16 @@ function greet3(arr, n, a) {
 people.forEach(p => {
   greet3`Are you ${p.name} and ${p.age} years old?`
 })
+
+// basic try /catch syntax
+
+try {
+  console.log('I will try this');
+  whaaat;
+  console.log('will this run?')
+} catch(err) {
+  console.log('Error is here:' + err.stack);
+} finally {
+  console.log('I will always run')
+}
+console.log('script continues and life as well')
