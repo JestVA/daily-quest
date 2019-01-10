@@ -419,4 +419,32 @@ function freezeObj() {
     return MATH_CONSTANTS.PI;
 }
 
-const PI = freezeObj()
+const PI = freezeObj();
+
+// anonymous arrow functions
+const anon = () => new Date();
+// arrow function with param
+const myConcat = (arr1, arr2) => arr1.concat(arr2);
+// higher order functions
+const realArray = [1, 2, -3, 4];
+const squareList = arr => {
+  const squareInts = arr.filter(n => Number.isInteger(n) && n > 0).map(x => x * x)
+  return squareInts;
+}
+const result = squareList(realArray)
+console.log(result)
+
+// IIFE
+const increment = (() => {
+  return (number, value = 1) => {
+    return number + value;
+  };
+})();
+console.log(increment(5, 2));
+console.log(increment(5))
+
+// refactor
+const increment = (() => (number, value = 1) => number + value)();
+console.log(increment(5, 2));
+console.log(increment(5))
+
