@@ -573,3 +573,52 @@ counter.increment();
 console.log(counter.value());
 counter.decrement();
 console.log(counter.value());
+
+// 8 methods to iterate through an array
+
+// 1. forEach
+
+[1, 2, 3].forEach((item, index) => console.log(item, index))
+
+// map
+
+[1, 2, 3].map(i => console.log(i * 2));
+
+// still array
+const initial = [1, 2, 3]
+const doubled = initial.map(i => i + i);
+console.log(doubled)
+
+// filter 
+
+const ints = [1, 2, 3, 4];
+const evens = ints.filter(e => e % 2 == 0);
+console.log(evens)
+
+// reduce
+
+const sum = [1, 2, 3].reduce((result, item) => result + item);
+console.log(sum)
+
+// some (at least some item has to pass a condition)
+
+const hasPositiveNumbers = [-1, -2, -3, 0, 1].some(i => i > 0);
+console.log(hasPositiveNumbers) // returns true || false
+
+// every (every item has to pass a condition)
+const allPositiveNumbers = [1, 2, 3, -1].every(i => i > 0);
+console.log(allPositiveNumbers); // false
+
+// find (checks every element in an array and returns the value that meets a condition)
+
+const objects = [{id: 'a'}, {id: 'b'}, {id: 'c'}]
+const found = objects.find(i => i.id === 'a');
+console.log(found) // returns the object with that property, if it does not find it it returns undefined 
+
+// find index 
+const objects2 = [{id: 'a'}, {id: 'b'}, {id: 1}];
+const found2 = objects2.findIndex(i => i.id === 1);
+console.log(found2); // returns the index where it found the condition is met 
+
+
+
