@@ -275,3 +275,79 @@ const testArray = [
 
 let bitcoins = testArray[0].list[2] // 'bitcoins'
 let minecraft = testArray[1].list[2] // 'Minecraft'
+
+// make copy of an object
+
+const objectCopy = JSON.parse(JSON.stringify(obj))
+
+// iterate with while loops
+let myArray = [];
+let i = 0
+while(i < 5) {
+    myArray.push(i);
+    i++;
+}
+console.log(myArray)
+
+// iterate with for loops
+let myArray = [];
+for(let i = 1; i < 6; i++) {
+    myArray.push(i)
+}
+
+// iterate odd numbers with a for loop
+let myArray = [];
+
+for(let i = 1; i < 10; i += 2) {
+    myArray.push(i)
+}
+
+// count backwards with a for loop
+
+let myArray = [];
+for (let i = 10; i > 0; i -= 2) {
+    myArray.push(i)
+}
+console.log(myArray)
+
+let myArray = [];
+for (let i = 9; i >= 0; i -= 2) {
+    myArray.push(i)
+}
+console.log(myArray)
+
+// like reduce but ES5
+let ourArray = [2, 10, 8, 20];
+let ourTotal = 0;
+for (let i = 0; i < ourArray.length; i++) {
+    ourTotal += ourArray[i];
+}
+console.log(ourTotal)
+
+// nesting for loops
+const multiplyAll = arr => {
+    let product = 1;
+    
+    for (let i = 0; i < arr.length; i++) {
+        for (let j = 0; j < arr[i].length; j++) {
+            product *= arr[i][j];
+        }
+    }
+    return product;
+}
+
+let product = multiplyAll([[1,2],[3,4],[5,6,7]])
+
+console.log(product)
+
+// iterate with do... while loops
+
+let myArray = [];
+let i = 0;
+
+do {
+    myArray.push(i);
+    i++;
+} while (i < 5)
+
+console.log(i, myArray)
