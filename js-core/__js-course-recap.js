@@ -351,3 +351,27 @@ do {
 } while (i < 5)
 
 console.log(i, myArray)
+
+// generate random fractions 
+
+const randomFraction = () => {
+    return Math.random();
+}
+console.log(randomFraction())
+
+// generate random whole numbers 
+// between 1 and 100
+
+const generateRandomWholeNumber = () => {
+    return Math.floor(Math.random() * 101)
+}
+// refactor
+const generateRandomWholeNumber = () => Math.floor(Math.random() * 101)
+
+console.log(generateRandomWholeNumber());
+
+// generate random numbers within a range
+const rangeNumbers = (myMin, myMax) => {
+    return Math.floor(Math.random() * (myMax - myMin + 1) + myMin);
+}
+console.log(rangeNumbers(0, 10))
