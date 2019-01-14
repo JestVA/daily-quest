@@ -51,6 +51,10 @@ const todoList = {
       for (let i = 0; i < totalTodos; i++) {
         this.todos[i].completed = false;
       }
+    } else {
+      for (let i = 0; i < totalTodos; i++) {
+        this.todos[i].completed = true;
+      }
     }
     
     this.displayTodos();
