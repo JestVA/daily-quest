@@ -57,11 +57,6 @@ let simpleList = [
 
 // pass a callback function inside the sort funciton
 // make use of ES6 arrow syntax for the callback function
-simpleList.sort((a, b) => {
-  if (a.id < b.id) {
-    return -1; 
-  } else {
-    return 1;
-  }
-});
+simpleList.sort((a, b) => (a.id < b.id) ? -1 : 1);
 console.log(simpleList);
+
