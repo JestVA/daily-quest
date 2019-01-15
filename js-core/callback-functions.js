@@ -17,8 +17,12 @@ console.log(coolFunction(2, 7, multiplyNumbers)); // 14
 
 const doMath = (a, b) => {
   console.log(`${a} and ${b} are here`);
+  return a ** b;
 }
 
 console.log(coolFunction(10, 11, doMath)) // "10 and 11 are here"
+
+// build a function inside the other function's arguments
+console.log(coolFunction(10, 11, (a, b) => {return a / b})) // 0.909090909090...
 
 
