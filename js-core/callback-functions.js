@@ -6,7 +6,9 @@ const multiplyNumbers = (a, b) => a * b;
 
 // Write a simple callback function
 const coolFunction = (num1, num2, callback) => {
-  return callback(num1, num2);
+  if (typeof callback === 'function') {
+    return callback(num1, num2);
+  }
 }
 
 // Test callback function
@@ -20,7 +22,8 @@ const doMath = (a, b) => {
   return a ** b;
 }
 
-console.log(coolFunction(10, 11, doMath)) // "10 and 11 are here"
+console.log(coolFunction(10, 11, doMath)) // "10 and 11 are here" 
+// returns 10000000000
 
 // build a function inside the other function's arguments
 console.log(coolFunction(10, 11, (a, b) => {return a / b})) // 0.909090909090...
