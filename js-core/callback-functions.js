@@ -28,4 +28,13 @@ console.log(coolFunction(10, 11, doMath)) // "10 and 11 are here"
 // build a function inside the other function's arguments
 console.log(coolFunction(10, 11, (a, b) => {return a / b})) // 0.909090909090...
 
-
+// build a function that does not make use of powerful abstractization
+// makes it easier to understand why a callback function is necessary, which lives outside the function
+const niceFunction = (num1, num2, someCalc) => {
+  if (someCalc === 'add') {
+    return num1 + num2;
+  } else if (someCalc === 'multiply') {
+    return num1 * num2;
+  }
+}
+console.log(niceFunction(9, 9, 'multiply'))
