@@ -28,6 +28,7 @@ console.log(coolFunction(10, 11, doMath)) // "10 and 11 are here"
 // build a function inside the other function's arguments
 console.log(coolFunction(10, 11, (a, b) => {return a / b})) // 0.909090909090...
 
+
 // build a function that does not make use of powerful abstractization
 // makes it easier to understand why a callback function is necessary, which lives outside the function
 const niceFunction = (num1, num2, someCalc) => {
@@ -38,3 +39,18 @@ const niceFunction = (num1, num2, someCalc) => {
   }
 }
 console.log(niceFunction(9, 9, 'multiply'))
+
+// implement a sort function to act as callback function
+
+let simpleList = [
+  {
+    team: 'Arsenal',
+    kit: 'home',
+    id: 1
+  },
+  {
+    team: 'Chelsea',
+    kit: 'away',
+    id: 2
+  }
+];
