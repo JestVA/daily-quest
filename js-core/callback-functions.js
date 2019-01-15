@@ -54,3 +54,14 @@ let simpleList = [
     id: 2
   }
 ];
+
+// pass a callback function inside the sort funciton
+// make use of ES6 arrow syntax for the callback function
+simpleList.sort((a, b) => {
+  if (a.id < b.id) {
+    return -1; 
+  } else {
+    return 1;
+  }
+});
+console.log(simpleList);
