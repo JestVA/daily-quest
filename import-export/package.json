@@ -1,6 +1,7 @@
 {
   "scripts": {
-    "babel-version": "babel --version"
+    "babel-version": "babel --version",
+    "start": "nodemon --exec npm run babel-node -- ./math.js"
   },
   "devDependencies": {
     "@babel/cli": "^7.2.3",
