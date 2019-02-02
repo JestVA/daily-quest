@@ -25,4 +25,4 @@ c({name: "Dorin", val: 32})
 // find last 
 
 const find_last = (A, F) => A.filter(F).slice(-1)[0];
-find_last([2, 4, 6, 8], n => n%4 ===2)
+find_last([2, 4, 6, 8], n => n%4 === 2 && n != 2)
