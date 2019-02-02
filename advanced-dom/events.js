@@ -1,0 +1,1 @@
+// element.addEventListener(type, functionToCall)
