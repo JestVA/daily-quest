@@ -7,3 +7,4 @@ function make_set(array, value = true) {
     });
     return object;
 }
+
