@@ -7,6 +7,8 @@ function factorial(n) {
     return n * factorial(n - 1);               // not a tail call
 }
 
+factorial(5)
+
 // Recursive function as a tail call
 
 function factorial(n, result = 1) {
