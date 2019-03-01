@@ -16,7 +16,7 @@ console.log(weekendOrWeekday(new Date()))
 
 // With no if statement
 
-// typeof this is a function 
+// typeof weekendOrWeekday is a function 
 const weekendOrWeekday = inputDate => {
     let result = inputDate.getDay()
     return weekendOrWeekday.labels[result] ||
@@ -28,7 +28,7 @@ const weekendOrWeekday = inputDate => {
         */
 }
 
-// typeof this is an Object
+// typeof weekendOrWeekday.labels is an Object
 weekendOrWeekday.labels = {
     '0': 'Weekend',
     '6': 'Weekend',
