@@ -16,13 +16,19 @@ console.log(weekendOrWeekday(new Date()))
 
 // With no if statement
 
+// typeof this is a function 
 const weekendOrWeekday = inputDate => {
     let result = inputDate.getDay()
     return weekendOrWeekday.labels[result] ||
         weekendOrWeekday.labels['default'] 
     
+        /*
+    you can also add the labels inside the function to make it more pure
+    if you then overwrite the key value pairs in the labels object from outside the function, when you call back the function it will still have the default assigned values blocked in function scope. Acting as a mutation preventer of sort (making the label property immutable)
+        */
 }
 
+// typeof this is an Object
 weekendOrWeekday.labels = {
     '0': 'Weekend',
     '6': 'Weekend',
