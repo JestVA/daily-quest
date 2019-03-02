@@ -44,11 +44,23 @@ doubler.operationsByTypeOf = {
 		input()
 	},
 	object: input => {
+		debugger;
 		Object.keys(input).map(key => (input[key] = doubler(input[key])))
 		return input
 	}
 }
 
+// Example calls:
+
+console.log(doubler(-10));
+console.log(doubler('hey'));
+console.log(doubler([5, 'hello']));
+console.log(doubler({ a: 5, b: 'hello' }));
+console.log(
+  doubler(function() {
+    console.log('call-me');
+  }),
+);
 
 
 
