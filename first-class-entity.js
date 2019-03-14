@@ -55,6 +55,31 @@ function filterArray(x, listOfNumbers) {
 
 // e.g. filterArray(3, numbers)
 
+// map can take a function directly and use it 
+let values = [1, 2, 3, -4, 5];
+
+function updateListMap(values) {
+  return values.map(Math.abs);
+}
+
+updateListMap(values); // [1, 2, 3, 4, 5]
+
+// cool reduce example
+
+let shoppingCart = [
+  { productTitle: "Product 1", amount: 10 },
+  { productTitle: "Product 2", amount: 30 },
+  { productTitle: "Product 3", amount: 20 },
+  { productTitle: "Product 4", amount: 60 }
+];
+
+const sumAmount = (currentTotalAmount, order) => currentTotalAmount + order.amount;
+
+function getTotalAmount(shoppingCart) {
+  return shoppingCart.reduce(sumAmount, 0);
+}
+
+getTotalAmount(shoppingCart); // 120
 
 
 
