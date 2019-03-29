@@ -34,4 +34,14 @@ I also think this is very clever:
 }
 
 Using it in conjunction with eval it evaluates the string to the correct logical operator.
+
+Like this:
+let AND = '&&'
+undefined
+let n1 = true
+undefined
+let n2 = false
+undefined
+eval(`${n1}${AND}${n2}`)
+false
 */
