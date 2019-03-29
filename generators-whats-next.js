@@ -1,6 +1,3 @@
-// https://medium.com/dailyjs/a-simple-guide-to-understanding-javascript-es6-generators-d1c350551950
-// https://www.codewars.com/kata/whats-up-next/train/javascript
-
 const nextItem = (xs, item) => {
       
     if (Array.isArray(xs)) {
@@ -13,11 +10,15 @@ const nextItem = (xs, item) => {
       return handleString ? handleString : undefined
     
     } else if (typeof xs === 'object') {
-
-        
+              
         let generator = xs
-        console.log(generator.next(item))
-        return generator.next(item).value + item
+        
+        if (generator.next() === undefined) {
+          return undefined
+        } else {
+          return generator.next().value + item
+
+        }
         
 //           let total = 0
 //           for (let i = 0; i <= item; i++) {
