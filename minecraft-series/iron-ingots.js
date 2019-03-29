@@ -38,3 +38,9 @@ const calcFuel = (n, t=n*11) => {
     }
     return result 
   };
+
+/*
+What I have learned:
+1. If you want the switch to keep looping you must not use the break keyword 
+2. My kata solution was on top of the page - let's see if I can get some bonus points 
+*/
