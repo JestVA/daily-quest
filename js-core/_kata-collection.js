@@ -9,7 +9,7 @@ const areYouPlayingBanjo = name => {
         return `${name} does not play banjo`
     }
   }
-
+ // edit
   // other solutions
 
 const areYouPlayingBanjo = name => name +  (name[0].toLowerCase() == 'r' ? ' plays' : ' does not play') + ' banjo'
@@ -27,3 +27,4 @@ understanding the logic behind regex better:
 ('dorin'.match(/^d/i) == 'd') == true  
 true // evaluates to true 
 */
+
