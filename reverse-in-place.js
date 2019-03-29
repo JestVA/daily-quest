@@ -15,3 +15,20 @@ function reverseArrayInPlace(arr) {
     }
     return this;
 }
+
+// This is a beautiful and crazy idea to solve the same: 
+Array.prototype.reverse = function() {
+    
+    // creates a new array 
+    
+    var arr = this.splice(0);  
+    
+    // while the length is truthy keeps doing it ( as it pops the items from the end of the array 
+    // it eventually gets to length = 0 and stops )
+    while(arr.length) {
+      this.push(arr.pop());
+    }   
+    
+    // get the return value of everything that was pushed in this 
+    return this;
+  };
