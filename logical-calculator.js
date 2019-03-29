@@ -25,4 +25,13 @@ function logicalCalc(array, op){
   return array.reduce(ops[op]);
 }
 
+Second:
+
+I also think this is very clever:
+
+  var op = {AND:"&&",OR:"||",XOR:"!="}[op];
+  return array.reduce((a,b)=>eval(`${a}${op}${b}`))
+}
+
+Using it in conjunction with eval it evaluates the string to the correct logical operator.
 */
