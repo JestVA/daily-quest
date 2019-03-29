@@ -7,29 +7,34 @@ const calcFuel = (n, t=n*11) => {
     const blazeRod = 120
     const lava = 800
     
-    result = {
+    let result = {
       lava: 0,
       blazeRod: 0,
       coal: 0,
       wood: 0,
       stick: 0,
     }
-    
-    // Need to build some logic to loop these values 
-    if (t >= lava) {
-      result.lava = parseInt(t / lava)
-    } else if (t >= blazeRod) {
-      result.blazeRod = parseInt(t / blazeRod)
-    } else if (t >= coal) {
-      result.coal = parseInt(t /coal)
-    } else if (t >= wood) {
-      result.wood = parseInt(t / wood)
-    } else if (t >= stick) {
-      result.stick = parseInt(t / stick)
+
+    switch (t >= lava || t >= blazeRod || t >= coal || t >= wood || t >= stick) {
+        case t >= lava:
+            result.lava = parseInt(t / lava)
+            t -= result.lava * lava
+            
+        case t >= blazeRod:
+            result.blazeRod = parseInt(t / blazeRod)
+            t -= result.blazeRod * blazeRod
+            
+        case t >= coal:
+            result.coal = parseInt(t /coal)
+            t -= result.coal * coal
+            
+        case t >= wood:
+            result.wood = parseInt(t / wood)
+            t -= result.wood * wood
+            
+        case t >= stick:
+            result.stick = parseInt(t / stick)
+            t -= result.stick * stick  
     }
-  
-    console.log(t)
-  
-    return result
-  
+    return result 
   };
