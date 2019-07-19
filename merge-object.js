@@ -10,3 +10,5 @@ const mergedObj = { ...obj1, ...obj2 }
 const merge = (...objects) => ({ ...objects })
 
 const mergedObjectFromFunction = merge(obj1, obj2)
+
+const addOneMoreMergedObjectFromFunction = merge( {}, obj1, obj2)
