@@ -161,3 +161,27 @@ let range = {
   for (let num of range) {
     alert(num); // 1, then 2, 3, 4, 5
   }
+
+// Calling an iterator explicitly
+
+let str = "Hello";
+
+// does the same as
+// for (let char of str) alert(char);
+
+let iterator = str[Symbol.iterator]();
+
+while (true) {
+  let result = iterator.next();
+  if (result.done) break;
+  alert(result.value); // outputs characters one by one
+}
+
+// Array from receives an extra argument slot to pass a function which will be iterated over in the new array for all the elements in the array
+
+// assuming that range is taken from the example above
+
+// square each number
+let arr = Array.from(range, num => num * num);
+
+alert(arr); // 1,4,9,16,25
