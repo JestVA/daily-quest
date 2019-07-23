@@ -108,7 +108,7 @@ function TodoItem(props) {
             <input 
                 type="checkbox" 
                 checked={props.item.completed} 
-                onChange={() => props.handleChange(props.item.id)}
+                onChange={() => props.handleChange(props.item.id)} // receives an event object, if we want to call the handleChange f with id then we need to wrap it in anonymous f
             />
             <p>{props.item.text}</p>
         </div>
@@ -164,11 +164,11 @@ class App extends React.Component {
     }
     
     handleChange(id) {
-
+        // we want not to mutate state directly - making a copy of the state array
         this.setState(prevState => {
             let changedCheckbox = prevState.todos.map(item => {
-                item.id === id ? item.completed = !item.completed : item.completed
-                return item
+                item.id === id ? item.completed = !item.completed : item.completed // was placing the ternary directly, nothing was changed
+                return item // was not returning the items so I was indirectly simplyfing the array with just boolean values, thus losing my state
             })
             return {
              todos: changedCheckbox 
@@ -177,7 +177,7 @@ class App extends React.Component {
     }
     
     render() {
-        const todoItems = this.state.todos.map(item => <TodoItem key={item.id} item={item} handleChange={this.handleChange}/>)
+        const todoItems = this.state.todos.map(item => <TodoItem key={item.id} item={item} handleChange={this.handleChange}/>) // I was passing onChange here, instead in the child component 
         
         return (
             <div className="todo-list">
