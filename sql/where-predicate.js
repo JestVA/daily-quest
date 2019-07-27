@@ -74,9 +74,23 @@ LIMIT 3
 // INNER JOIN brings back only results that exist in both tables
 
 // CustomerOrder and Customer and two different tables 
+
+
+// Watch out for SELECT * when working with inner joins as it will bring all columns (Like ID will be 2 x times which is not good)
 sql`
 SELECT *
 FROM CustomerOrder AS o 
 INNER JOIN Customer AS c
     ON o.customerid = c.id
 ` 
+
+// Now selecting only the entities that we want:
+
+sql`
+SELECT o.CustomerId,
+o.amount,
+c.name
+FROM CustomerOrder AS o
+INNER JOIN Customer AS c 
+    ON o.CustomerId = c.id
+`
