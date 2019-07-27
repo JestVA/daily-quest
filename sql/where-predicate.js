@@ -69,3 +69,14 @@ LIMIT 3
 // using LIMIT together with OFFSET (we can paginate over a set of results. OFFSET basically means "Start with Nth result")
 
 
+// Querying across tables (with JOINS - two most important are INNER and OUTER jois )
+
+// INNER JOIN brings back only results that exist in both tables
+
+// CustomerOrder and Customer and two different tables 
+sql`
+SELECT *
+FROM CustomerOrder AS o 
+INNER JOIN Customer AS c
+    ON o.customerid = c.id
+` 
