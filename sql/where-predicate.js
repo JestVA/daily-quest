@@ -118,3 +118,17 @@ async function getAllProduct() {
 }
 
 // A join needs to be as close to the FROM clause as possible
+
+// left join 
+
+sql`
+    SELECT 
+    c.id,
+    c.contactname,
+    c.companyname,
+    count(co.id) as ordercount
+    FROM 
+    Customer AS c
+    LEFT JOIN CustomerOrder AS co ON co.customerid = c.id
+    GROUP BY c.id
+`
