@@ -97,7 +97,7 @@ INNER JOIN Customer AS c
 // diff left join example
 
 sql`
-SELECT p.* FROM Product AS p
+SELECT p.*, s.productcolor FROM Product AS p
     LEFT JOIN Supplier AS s
         ON p.id = s.id
 `
