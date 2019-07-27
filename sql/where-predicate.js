@@ -94,3 +94,11 @@ FROM CustomerOrder AS o
 INNER JOIN Customer AS c 
     ON o.CustomerId = c.id
 `
+// diff left join example
+
+sql`
+SELECT p.* FROM Product AS p
+    LEFT JOIN Supplier AS s
+        ON p.id = s.id
+`
+
