@@ -27,6 +27,6 @@ export async function getEmployee(id) {
         SELECT *
         FROM Employee
         WHERE id = $1
-        `, id
+        `, id // in a query, $1 is a blank to fill in later 
     )
 }

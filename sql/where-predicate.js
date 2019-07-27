@@ -94,6 +94,9 @@ FROM CustomerOrder AS o
 INNER JOIN Customer AS c 
     ON o.CustomerId = c.id
 `
+
+
+
 // diff left join example
 
 sql`
@@ -102,3 +105,16 @@ SELECT p.*, s.productcolor AS favoritecolor FROM Product AS p
         ON p.id = s.id
 `
 
+// How this would look in real world example
+async function getAllProduct() {
+    const db = await getDeb()
+    let whereClause = ''
+    return await db.all(sql`
+        SELECT ${ALL_PRODUCTS_COLUMNS.map(x => `p.${x}`).join(',')}, s.productcolor AS favoritecolor FROM Product AS p 
+        LEFT JOIN Supplier AS s
+            ON p.id = s.id
+        ${whereClause}
+    `)
+}
+
+// A join needs to be as close to the FROM clause as possible
