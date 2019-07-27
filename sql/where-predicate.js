@@ -12,3 +12,13 @@
  * billing_state LIKE '__'
  * 
  */
+sql`
+SELECT 
+    productName
+FROM 
+    productName
+WHERE (
+    unitprice > 60
+    AND unitsinstock > 20
+)
+` 
