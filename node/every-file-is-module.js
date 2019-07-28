@@ -63,3 +63,4 @@ module.exports.pollSomeAPI = pollSomeAPI
 module.exports.endpoint = url
 
 console.log(module) // OK : P so now I get the correct export values when inspecting the module object - When I was logging, no export was exported yet
+

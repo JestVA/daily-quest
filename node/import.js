@@ -30,3 +30,6 @@ http://request=id936
 ..API polled with endpoint http://request=id936
 
 */
+
+const greet = require('./exporting-just-function')
+greet('Dumitrascuta')
