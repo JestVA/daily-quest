@@ -44,3 +44,21 @@ Module {
 - functions and everything (variables..) are scoped to this module (private)
 
 */
+
+
+const url = 'http://request=id936'
+
+function getId(endpoint) {
+    const match = endpoint.match(/=id\d+/)
+    // console.log(match[0])
+    return match[0]
+}
+
+function pollSomeAPI(url) {
+    // send an HTTP request
+    console.log(`..API polled with endpoint ${url}`)
+}
+
+module.exports.extractMatch = getId
+module.exports.pollSomeAPI = pollSomeAPI 
+module.exports.endpoint = url
