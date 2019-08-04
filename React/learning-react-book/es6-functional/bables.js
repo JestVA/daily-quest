@@ -8,3 +8,8 @@ const messages = [
 messages[1](messages[0]) // functions can be inserted into arrays
 
 // Resolved git authentication issue? 
+
+const insideFunction = logger => logger('Want to print this')
+
+insideFunction(message => console.log(message)) // 'Want to print this'
+
