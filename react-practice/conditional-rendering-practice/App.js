@@ -27,8 +27,8 @@ class App extends React.Component {
         this.handleLogin = this.handleLogin.bind(this)
     }
     handleLogin() {
-        this.setState({
-            isLoggedIn: !this.state.isLoggedIn 
+        this.setState(prevState => {
+            isLoggedIn: !prevState.isLoggedIn 
         })
     }
     
