@@ -6,3 +6,5 @@ const messages = [
 ]
 
 messages[1](messages[0]) // functions can be inserted into arrays
+
+// Resolved git authentication issue? 
