@@ -1,12 +1,7 @@
 import React from 'react'
 
 function Conditional(props) {
-    return (
-        <div>
-            {props.isLoading ? <h1>Loading...</h1> : <h1>Loaded!</h1>}
-        </div>
-    )
-    
+    return <h1>Loaded!</h1>
 }
 
 export default Conditional
