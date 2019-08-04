@@ -13,3 +13,26 @@ const insideFunction = logger => logger('Want to print this')
 
 insideFunction(message => console.log(message)) // 'Want to print this'
 
+// Keeping object purity
+
+let schools = [
+    { name: 'York'},
+    { name: 'New York'}
+]
+
+const updateSchool = (oldName, name, arr) => {
+    return arr.map(school => {
+        if (school.name === oldName) {
+            return {
+                ...school,
+                name
+            }
+        } else {
+            return school
+        }
+    })
+}
+
+let updatedSchools = updateSchool('York', 'Big York', schools)
+console.log(updatedSchools[0])
+console.log(schools[0])
