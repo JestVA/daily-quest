@@ -13,8 +13,9 @@ class App extends Component {
 
     // we use square brackets because the event target name is a string so this is how you would use a string literal inside an object (just 100% JS)
     handleChange(event) {
+        const { name, value } = event.target
         this.setState({
-            [event.target.name]: event.target.value
+            [name]: value
         })
     }
     
@@ -23,9 +24,21 @@ class App extends Component {
     render() {
         return (
             <form>
-                <input type="text" value={this.state.firstName} name="firstName" placeholder="First Name" onChange={this.handleChange} />
+                <input 
+                    type="text" 
+                    value={this.state.firstName} 
+                    name="firstName" 
+                    placeholder="First Name" 
+                    onChange={this.handleChange} 
+                />
                 <br />
-                <input type="text" value={this.state.lastName} name="lastName" placeholder="Last Name" onChange={this.handleChange} />
+                <input 
+                    type="text" 
+                    value={this.state.lastName} 
+                    name="lastName" 
+                    placeholder="Last Name" 
+                    onChange={this.handleChange} 
+                />
                 <h1>{this.state.firstName} {this.state.lastName}</h1>
             </form>
         )
