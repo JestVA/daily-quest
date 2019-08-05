@@ -28,10 +28,10 @@ class App extends Component {
     }
     
     render() {
-        let isLoading = this.state.loading
+        let text = this.state.loading ? 'Loading' : this.state.character.name
         return (
             <div>
-                {isLoading ? 'Loading' : this.state.character.name}
+                {text}
             </div>
         )
     }
