@@ -8,25 +8,30 @@ class App extends Component {
     constructor() {
         super()
         this.state = {
+            loading: false,
             character: {}
         }
     }
     
-    // This is where we can do API calls, and the way to save the data returned from the API call is to save it to state so that it persists in our application.
     componentDidMount() {
+        this.setState({
+            loading: true
+        })
         fetch("https://swapi.co/api/people/1")
             .then(response => response.json())
             .then(data => {
                 this.setState({
-                    character: data
+                    character: data,
+                    loading: false
                 })
             })
     }
     
     render() {
+        let isLoading = this.state.loading
         return (
             <div>
-                {this.state.character.name}
+                {isLoading ? 'Loading' : this.state.character.name}
             </div>
         )
     }
