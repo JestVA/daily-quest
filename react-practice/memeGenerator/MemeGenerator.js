@@ -7,45 +7,58 @@ class MemeGenerator extends Component {
             topText: "",
             bottomText: "",
             randomImg: "http://i.imgflip.com/1bij.jpg",
-            allMemeImgs: [],
-            loading: false
+            allMemeImgs: []
         }
+        this.handleChange = this.handleChange.bind(this)
+    }
+    
+    componentDidMount() {
+        fetch("https://api.imgflip.com/get_memes")
+            .then(response => response.json())
+            .then(response => {
+                const {memes} = response.data
+                this.setState({ allMemeImgs: memes })
+            })
+    }
+    
+    handleChange(event) {
+        const {name, value} = event.target
+        this.setState({ [name]: value })
     }
     
     /**
-     * We'll be using an API that provides a bunch of meme images.
-     * 
-     * Your task:
-     * make an API call to "https://api.imgflip.com/get_memes" and save the 
-     * data that comes back (`response.data.memes`) to a new state property
-     * called `allMemeImgs`. (The data that comes back is an array)
+     * Create a method that, when the "Gen" button is clicked, chooses one of the
+     * memes from our `allMemeImgs` array at random and makes it so that is the
+     * meme image that shows up in the bottom portion of our meme generator site (`.url`)
      */
-    componentDidMount() {
-        this.setState({
-            loading: true
-        })
-        fetch('https://api.imgflip.com/get_memes')
-            .then(data => data.json())
-            .then(response => {
-                console.log(response.data.memes[0].url)
-                const { memes } = response.data
-                this.setState({
-                    allMemeImgs: memes,
-                    loading: false
-                })
-            } 
-                
-        )
-        
-        }
     
     render() {
-        let text = this.state.loading ? '..loading' : 'Finished'
-        
         return (
-            <h1>{text}
-            <img src={this.state.allMemeImgs[0] && this.state.allMemeImgs[0].url} /> 
-            </h1>
+            <div>
+                <form className="meme-form">
+                    <input 
+                        type="text"
+                        name="topText"
+                        placeholder="Top Text"
+                        value={this.state.topText}
+                        onChange={this.handleChange}
+                    /> 
+                    <input 
+                        type="text"
+                        name="bottomText"
+                        placeholder="Bottom Text"
+                        value={this.state.bottomText}
+                        onChange={this.handleChange}
+                    /> 
+                
+                    <button>Gen</button>
+                </form>
+                <div className="meme">
+                    <img src={this.state.randomImg} alt="" />
+                    <h2 className="top">{this.state.topText}</h2>
+                    <h2 className="bottom">{this.state.bottomText}</h2>
+                </div>
+            </div>
         )
     }
 }
