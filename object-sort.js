@@ -4,7 +4,7 @@ const sortList = (sortBy, list) => {
 	if(!hasProp)
 		return [];
 
-	const sorted = [];
+	let sorted = [];
 
 	for(let i=0; i < list.length; i++)
 	{
@@ -13,27 +13,19 @@ const sortList = (sortBy, list) => {
 			sorted.push(list[i]);
 			continue;
 		}
-
+		debugger;
+		
 		let j = 0;
 
-		while(j < sorted.length)
+		while(sorted[j][sortBy] > list[i][sortBy])
 		{
-			if(list[i][sortBy] < sorted[j][sortBy])
-				j++;
-			else
-			{
-				let before = sorted.slice(j);
-				let toArrange = before.unshift(list[i]);
-				let biggest = sorted.splice(j);
-				let arranged = biggest.concat(toArrange);
-				sorted = arranged;
-				continue;
-
-			}
-
+			j++;
 		}
 
-		sorted.push(list[i]);
+		let before = sorted.slice(j);
+		before.unshift(list[i]);
+		sorted.splice(j);
+		sorted = sorted.concat(before);
 
 		continue;
 
@@ -42,3 +34,10 @@ const sortList = (sortBy, list) => {
 	return sorted;
 
 }
+
+sortList("a", [
+  {"a": 1, "b": 3},
+  {"a": 3, "b": 2},
+  {"a": 2, "b": 40},
+  {"a": 4, "b": 12}
+])
