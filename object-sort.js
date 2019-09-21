@@ -1,5 +1,7 @@
 const sortList = (sortBy, list) => {
-	const hasProp = !!list.filter(obj => obj.hasOwnProperty(sortBy));
+	console.log(sortBy)
+  console.log(list)
+  const hasProp = !!list.filter(obj => obj.hasOwnProperty(sortBy));
   
 	if(!hasProp)
 		return [];
@@ -16,16 +18,28 @@ const sortList = (sortBy, list) => {
 		debugger;
 		
 		let j = 0;
-
+		let shouldPush = null;
+		
 		while(sorted[j][sortBy] > list[i][sortBy])
 		{
-			j++;
+			if( (j + 1) < sorted.length)
+				j++;
+			else
+			{
+				shouldPush = true;
+			 	break;
+			}  
 		}
-
-		let before = sorted.slice(j);
-		before.unshift(list[i]);
-		sorted.splice(j);
-		sorted = sorted.concat(before);
+		
+		if(shouldPush)
+			sorted.push(list[i])
+		else
+		{
+			const before = sorted.slice(j);
+			before.unshift(list[i]);
+			sorted.splice(j);
+			sorted = sorted.concat(before);
+		}
 
 		continue;
 
@@ -35,9 +49,31 @@ const sortList = (sortBy, list) => {
 
 }
 
+// Test green
+
+/*
 sortList("a", [
   {"a": 1, "b": 3},
   {"a": 3, "b": 2},
   {"a": 2, "b": 40},
   {"a": 4, "b": 12}
 ])
+*/
+
+// Test red
+
+/*
+[ { a: 4, b: 3 },
+  { a: 2, b: 2 },
+  { a: 3, b: 40 },
+  { a: 1, b: 12 } ]
+*/
+
+// WOw! 
+sortList("a", [
+	{"a": 1 },
+	{"a": 3 },
+	{"a": -2, "b": 40},
+	{"a": 0}, {"a": -10},{"a": 24},{"a": 44},{"a": 0.4},{"a": 4.29}
+  ])
+  
