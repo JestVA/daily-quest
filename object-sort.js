@@ -1,3 +1,5 @@
+// {} sort algoritm
+
 const sortList = (sortBy, list) => {
 	console.log(sortBy)
   console.log(list)
