@@ -4,7 +4,7 @@ const sortList = (sortBy, list) => {
 	console.log(sortBy)
   console.log(list)
   const hasProp = !!list.filter(obj => obj.hasOwnProperty(sortBy));
-  
+
 	if(!hasProp)
 		return [];
 
@@ -30,7 +30,7 @@ const sortList = (sortBy, list) => {
 			{
 				shouldPush = true;
 			 	break;
-			}  
+			}
 		}
 		
 		if(shouldPush)
@@ -77,5 +77,16 @@ sortList("a", [
 	{"a": 3 },
 	{"a": -2, "b": 40},
 	{"a": 0}, {"a": -10},{"a": 24},{"a": 44},{"a": 0.4},{"a": 4.29}
-  ])
-  
+  ]);
+
+// the "conformist formula sugar is now:"
+const sortList = (sortBy,a) => a.sort((a,b) => b[sortBy]-a[sortBy])
+
+// and an even older version
+function sortList (sortBy, list) {
+	return list.sort((l, r) => {
+	  if (l[sortBy] < r[sortBy]) return 1
+	  if (l[sortBy] > r[sortBy]) return -1
+	  return 0
+	});
+}
