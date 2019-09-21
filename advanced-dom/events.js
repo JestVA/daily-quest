@@ -1,1 +1,1 @@
-// element.addEventListener(type, functionToCall)
+element.addEventListener(type, functionToCall)
