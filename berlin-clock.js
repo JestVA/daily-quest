@@ -1,25 +1,17 @@
 const berlinClock = time => 
 {
-
-	console.log(time);
-	let seconds,
-		fiveHours,
-		fullHours,
-		fiveMinutes,
-		fullMinutes
-
+	// Extract the time with capturing groups
 	const timeReg = /(\d+):(\d+):(\d+)/;
 
 	const hours = timeReg.exec(time)[1];
 	const minutes = timeReg.exec(time)[2];
+	const seconds = timeReg.exec(time)[3] % 2 === 0 ? 'Y' : 'O';
 
-	seconds = timeReg.exec(time)[3] % 2 === 0 ? 'Y' : 'O';
-
-	fiveHours = Math.floor(hours / 5);
-	fullHours = hours % 5;
-
-	fiveMinutes = Math.floor(minutes / 5);
-	fullMinutes = minutes % 5; 
+	// Build our variables
+	const fiveHours = Math.floor(hours / 5);
+	const fullHours = hours % 5;
+	const fiveMinutes = Math.floor(minutes / 5);
+	const fullMinutes = minutes % 5; 
 
 	// row 1, 2 & 4 have 4 posible states
 	let firstRow = '';
@@ -57,7 +49,6 @@ const berlinClock = time =>
 		else
 			thirdRow += 'O';
 	}
-
 
 	return 	seconds + '\n' + 
 			firstRow + '\n' + 
