@@ -23,6 +23,8 @@ const berlinClock = time =>
 
 	// row 1, 2 & 4 have 4 posible states
 	let firstRow = '';
+	let secondRow = '';
+	let fourthRow = '';
 
 	for(let i = 0; i < 4; i++)
 	{
@@ -30,9 +32,37 @@ const berlinClock = time =>
 			firstRow += 'R';
 		else
 			firstRow += 'O';
+		if(i < fullHours)
+			secondRow += 'R';
+		else
+			secondRow += 'O';
+		if(i < fullMinutes)
+			fourthRow += 'Y';
+		else
+			fourthRow += 'O';
+	}
+
+	// row 3 is quirky
+	let thirdRow = '';
+
+	for(let i = 0; i < 11; i++)
+	{
+		if(i < fiveMinutes)
+		{
+			if(i == 2 || i == 5 || i == 8)
+				thirdRow += 'R';
+			else 
+				thirdRow += 'Y';
+		}
+		else
+			thirdRow += 'O';
 	}
 
 
-	return seconds + '\n' + firstRow;
+	return 	seconds + '\n' + 
+			firstRow + '\n' + 
+			secondRow + '\n' + 
+			thirdRow + '\n' + 
+			fourthRow;
 
 }
