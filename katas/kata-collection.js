@@ -42,3 +42,34 @@ function isValidWalk(walk) {
 	else return true;
 
 }
+
+/**
+ * 6 KYU
+ * https://www.codewars.com/kata/persistent-bugger/train/javascript
+ */
+
+function persistence(num)
+{
+	let recursive = 0;
+	persist(num);
+	return recursive;
+
+	function persist(num)
+	{
+		while(stringifyNumAndSplit(num).length > 1)
+		{
+			recursive++;
+			return persist(stringifyNumAndSplit(num).reduce((a,c)=>a*c));
+		}
+
+		return recursive;
+	}
+
+	function stringifyNumAndSplit(num)
+	{
+		return [...num.toString()];
+	}
+
+}
+
+ 
