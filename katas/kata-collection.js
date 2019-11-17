@@ -72,4 +72,34 @@ function persistence(num)
 
 }
 
+/**
+ * 3 KYU
+ * https://www.codewars.com/kata/5571d9fc11526780a000011a/train/javascript
+ */
+
+class Thing {
+	constructor(name) 
+	{
+		this.name = name;
+	}
+	
+	get is_a_woman() 
+	{
+		return this.is_a()
+  	}
+  
+	get is_a_man() {
+		return this.is_not_a()
+  	}
+	
+	is_a() {
+	  return true;
+	}
+	
+	is_not_a(){
+	  return false;
+  }
+	
+	
+  }
  
