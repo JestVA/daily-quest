@@ -72,4 +72,101 @@ function persistence(num)
 
 }
 
- 
+/**
+ * 4 KYU
+ * https://www.codewars.com/kata/snail/train/javascript
+ */
+
+const snail = array =>
+{
+	// const action = action.nextMove = (coords) => 
+	// {
+	// 	newCoords = coords.map(coord => )
+
+
+	// 	action.moves.push(newCoords)
+	
+	
+	// }
+	
+	const moveState = {};
+	
+	const stareaInitiala = [1, 1, 1, 1]; // procedure 1 
+	
+	const proceduri = {
+		"procedura_1": [1, 1, 1, 1],
+		"procedura_urmatoare": []
+	}
+	
+
+	createAGoodDict = {}
+
+	const flatMatrix = arr.flatMap(x => x);
+	
+	const flatMatrixLength = flatMatrix.length;
+	
+	if(flatMatrixLength === 0)
+		return [];
+	
+
+
+	const decide = (action) => 
+	{
+		if(action.type == "procedura_1")
+		{
+		
+		}
+
+		action.nextMove = (coords) => 
+		{
+			newCoords = coords.map(coord => )
+
+
+			action.moves.push(newCoords)
+		
+		
+		}
+		
+	}
+	// Can be an [] like this:
+	// array = [[1,2,3],[4,5,6],[7,8,9]]
+	// result = [1,2,3,6,9,8,7,4,5]
+
+	
+
+	// simulate the phisics of the snail
+	// it can move only ahead until it finds obstacle and only right when it found obstacle
+	// the start array is always traversed to the max and snail never returns in it
+	
+	// at each new step, snail has 3 choices:
+		// to a step ahead
+		// to go a step right
+		// to stop
+	
+	
+	
+
+
+	
+
+	const move = (history, position) =>
+	{
+
+	}
+
+
+
+
+	// should return an []
+	// return; 
+}
+
+function snail(arr) 
+{
+	const snailAt = i + 1
+	
+
+
+}
+
+const game = []
