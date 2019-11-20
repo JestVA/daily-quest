@@ -191,38 +191,46 @@ class Thing {
 
 function incrementString (string) {
 	console.log(string)
-    debugger;
-  const regx = /(\d+$)/
+  
+  debugger;
+  
+  const regx = /(\d+$)/;
 	
 	const capture = regx.exec(string); 
 	
 	if(!capture)
-		return string + 1 // nothing to do here but to append a 1 
+		return string + 1; // nothing to do here but to append a 1 
 	
 	// we have a digit somewhere 
 
 	let strDigit = capture[1]; // assignment to constant variable otherwise
-	
-//   const incrementStrDigit = ++strDigit // this mutates strDigit so it is not good later on - like when slice tries to slice a string you know, not a number 
-  
+	  
 	const num = parseInt(strDigit).toString().length;
 	
 	if(num == strDigit.length)
-		// no leading zeros
 		return string.replace(regx, ++strDigit); // also increments it
 	
 	// It's complicated 
 
 	// 001 or 00100
+  
+  // what if 000 ?
 	
 	const filterRegex = /([1-9]+)/;
 
-	filterRegex.exec(strDigit); 
+  
+	const digitBetweenZeros = filterRegex.exec(strDigit); // can this be undefined if no digit amongst zeroes? 
 
-	const indexOfDigitBetweenZeros = filterRegex.index; 
-
-	const justLastOne = parseInt(strDigit.slice(indexOfDigitBetweenZeros)) + 1;
-	const beforeIfAny = strDigit.slice(indexOfDigitBetweenZeros - 1, indexOfDigitBetweenZeros)
+  let indexOfDigitBetweenZeros = null;
+  
+  if(digitBetweenZeros) // like not null 
+    indexOfDigitBetweenZeros = digitBetweenZeros.index;
+  
+  console.log(indexOfDigitBetweenZeros, 'wonder what this is')
+	
+  const justLastOne = parseInt(strDigit.slice(indexOfDigitBetweenZeros)) + 1;
+	
+  const beforeIfAny = strDigit.slice(indexOfDigitBetweenZeros - 1, indexOfDigitBetweenZeros)
 
 	return string.replace(strDigit, '') + beforeIfAny + justLastOne;
 
