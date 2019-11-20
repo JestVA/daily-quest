@@ -185,3 +185,51 @@ class Thing {
 		return false;
 	}
 }
+
+
+// 5 KYU https://www.codewars.com/kata/54a91a4883a7de5d7800009c
+
+function incrementString (string) {
+	console.log(string)
+    debugger;
+  const regx = /(\d+$)/
+	
+	const capture = regx.exec(string); 
+	
+	if(!capture)
+		return string + 1 // nothing to do here but to append a 1 
+	
+	// we have a digit somewhere 
+
+	let strDigit = capture[1]; // assignment to constant variable otherwise
+	
+//   const incrementStrDigit = ++strDigit // this mutates strDigit so it is not good later on - like when slice tries to slice a string you know, not a number 
+  
+	const num = parseInt(strDigit).toString().length;
+	
+	if(num == strDigit.length)
+		// no leading zeros
+		return string.replace(regx, ++strDigit); // also increments it
+	
+	// It's complicated 
+
+	// 001 or 00100
+	
+	const filterRegex = /([1-9]+)/;
+
+	filterRegex.exec(strDigit); 
+
+	const indexOfDigitBetweenZeros = filterRegex.index; 
+
+	const justLastOne = parseInt(strDigit.slice(indexOfDigitBetweenZeros)) + 1;
+	const beforeIfAny = strDigit.slice(indexOfDigitBetweenZeros - 1, indexOfDigitBetweenZeros)
+
+	return string.replace(strDigit, '') + beforeIfAny + justLastOne;
+
+}
+
+// very cool kata
+/**
+ * @todo
+ */
+// https://www.codewars.com/kata/the-lift/train/javascript
