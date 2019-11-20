@@ -219,18 +219,31 @@ function incrementString (string) {
 	const filterRegex = /([1-9]+)/;
 
   
-	const digitBetweenZeros = filterRegex.exec(strDigit); // can this be undefined if no digit amongst zeroes? 
+	const digitBetweenZeros = filterRegex.exec(strDigit);  
 
   let indexOfDigitBetweenZeros = null;
+  let moreThanOneDigit = null;
+  
+  if(!digitBetweenZeros)
+    return string.slice(0, string.length - 1) + 1; 
+  
   
   if(digitBetweenZeros) // like not null 
+  {
     indexOfDigitBetweenZeros = digitBetweenZeros.index;
+    
+    moreThanOneDigit = digitBetweenZeros[1].length > 1;  
+  }
   
-  console.log(indexOfDigitBetweenZeros, 'wonder what this is')
-	
+  
+  
   const justLastOne = parseInt(strDigit.slice(indexOfDigitBetweenZeros)) + 1;
-	
-  const beforeIfAny = strDigit.slice(indexOfDigitBetweenZeros - 1, indexOfDigitBetweenZeros)
+  
+  if(justLastOne % 10 == 0) // it went from 9 -> 10 or 99 -> 100
+    return string.replace(strDigit, '') + justLastOne;
+
+  
+  const beforeIfAny = strDigit.slice(0, indexOfDigitBetweenZeros)
 
 	return string.replace(strDigit, '') + beforeIfAny + justLastOne;
 
