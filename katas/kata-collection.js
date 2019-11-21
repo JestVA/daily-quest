@@ -218,7 +218,6 @@ function incrementString (string) {
 	
 	const filterRegex = /([1-9]+)/;
 
-  
 	const digitBetweenZeros = filterRegex.exec(strDigit);  
 
   let indexOfDigitBetweenZeros = null;
@@ -235,15 +234,14 @@ function incrementString (string) {
     moreThanOneDigit = digitBetweenZeros[1].length > 1;  
   }
   
-  
-  
   const justLastOne = parseInt(strDigit.slice(indexOfDigitBetweenZeros)) + 1;
   
-  if(justLastOne % 10 == 0) // it went from 9 -> 10 or 99 -> 100
-    return string.replace(strDigit, '') + justLastOne;
-
-  
   const beforeIfAny = strDigit.slice(0, indexOfDigitBetweenZeros)
+  
+  // before if any will need to unshift a 0, if 009 becomes 010 than we just lost a 0
+  
+  if(justLastOne % 10 == 0) // it went from 9 -> 10 or 99 -> 100
+    return string.replace(strDigit, '') + beforeIfAny.slice(1) + justLastOne;
 
 	return string.replace(strDigit, '') + beforeIfAny + justLastOne;
 
