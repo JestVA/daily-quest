@@ -1,6 +1,7 @@
 /*
-https://www.codewars.com/kata/take-a-ten-minute-walk/train/javascript
-6 KYU */
+ https://www.codewars.com/kata/take-a-ten-minute-walk/train/javascript
+ 6 KYU 
+ */
 
 function isValidWalk(walk) {
 	const mapCoordinates = { n: 1, s: -1, e: 1, w: -1 };
@@ -60,6 +61,8 @@ function persistence(num) {
 
 /**
  * 
+ * @todo
+ *
 4 KYU
 https://www.codewars.com/kata/snail/train/javascript
  */
@@ -148,19 +151,11 @@ const snail = array =>
    // return; 
 }
 
-function snail(arr) 
-{
-   const snailAt = i + 1
-   
-
-
-}
-
-const game = []
-
-
 /**
  * 3 KYU
+ * 
+ * @todo
+ *
  * https://www.codewars.com/kata/5571d9fc11526780a000011a/train/javascript
  */
 
@@ -186,8 +181,10 @@ class Thing {
 	}
 }
 
-
-// 5 KYU https://www.codewars.com/kata/54a91a4883a7de5d7800009c
+/**
+ * 
+ * 5 KYU https://www.codewars.com/kata/54a91a4883a7de5d7800009c
+ */
 
 function incrementString (string) {
 	console.log(string)
@@ -247,7 +244,7 @@ function incrementString (string) {
 
 }
 
-// very cool kata
+
 /**
  * @todo
  */
