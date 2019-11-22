@@ -160,32 +160,53 @@ const snail = array =>
  */
 
 class Thing {
-	constructor(name) {
+	constructor(name) 
+	{
 		this.name = name;
 	}
 
-	get is_a_woman() {
-		return this.is_a();
+	set has()
+	{
+		this.arms = [];
 	}
-
+	
+	get is_a_woman() 
+	{
+		return this.is_a()
+  	}
+  
 	get is_a_man() {
-		return this.is_not_a();
+	return this.is_not_a()
+  }
+	
+	is_a(){
+	  return true;
 	}
-
-	is_a() {
-		return true;
+	
+	is_not_a(){
+	  return false;
+  }
+  
+	get arms() {
+	  return [];
 	}
-
-	is_not_a() {
-		return false;
+	has(quantity){
+	  return this.arms = quantity;
 	}
-}
+	
+  }
 
-/**
- * 
- * 5 KYU https://www.codewars.com/kata/54a91a4883a7de5d7800009c
+  const handler = {
+	  get: (obj, prop) => prop in obj ? obj[prop] : console.log('Not found')
+  }
+  const proxiedClass = new Proxy(class Thing {}, handler);
+
+
+
+
+/* 
+ 5 KYU https://www.codewars.com/kata/54a91a4883a7de5d7800009c
  */
-
 function incrementString (string) {
 	console.log(string)
   
