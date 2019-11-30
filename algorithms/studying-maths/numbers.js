@@ -1,4 +1,4 @@
-// Build a function that returns all possible whole numbers from any given digits (0-9)
+// Build a function that returns all possible whole numbers (base 10) from any given digits (0-9)
 
 const assembleWholeNumbers = (...digits) => 
 {	
@@ -8,7 +8,6 @@ const assembleWholeNumbers = (...digits) =>
 		// include 0 digit in sequence: 0, 1, 2
 			// should create 4 whole numbers 
 	
-
 	// Calculates the n!  
 	const numberOfPossiblePermutations = Array(digits.length)
 		.fill()
@@ -17,7 +16,7 @@ const assembleWholeNumbers = (...digits) =>
 	
 	// Assemble the possible whole numbers through brute force
 	// Pick reasonable solutions (filter numbers that repeat)
-
+	// Omit numbers that start in 0 as to avoid octal numbers
 
 
 }; 
