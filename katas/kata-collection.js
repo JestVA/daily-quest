@@ -1,9 +1,6 @@
-/*
- https://www.codewars.com/kata/take-a-ten-minute-walk/train/javascript
- 6 KYU 
- */
-
 function isValidWalk(walk) {
+// https://www.codewars.com/kata/take-a-ten-minute-walk/train/javascript
+
 	const mapCoordinates = {
 		n: 1,
 		s: -1,
@@ -45,12 +42,8 @@ function isValidWalk(walk) {
 	else return true;
 }
 
-/**
- * 6 KYU
- * https://www.codewars.com/kata/persistent-bugger/train/javascript
- */
-
 function persistence(num) {
+// https://www.codewars.com/kata/persistent-bugger/train/javascript
 	let recursive = 0;
 	persist(num);
 	return recursive;
@@ -69,15 +62,14 @@ function persistence(num) {
 	}
 }
 
-/**
- * 
- * @todo
- *
-4 KYU
-https://www.codewars.com/kata/snail/train/javascript
- */
-
 const snail = array => {
+	/*
+	* @todo
+	4 KYU
+	https://www.codewars.com/kata/snail/train/javascript
+	*/
+
+
 	// const action = action.nextMove = (coords) => 
 	// {
 	// 	newCoords = coords.map(coord => )
@@ -156,15 +148,15 @@ const snail = array => {
 	// return; 
 }
 
-/**
- * 3 KYU
- * 
- * @todo
- *
- * https://www.codewars.com/kata/5571d9fc11526780a000011a/train/javascript
- */
-
 class Thing {
+	/**
+	 * 3 KYU
+	 * 
+	 * @todo
+	 *
+	 * https://www.codewars.com/kata/5571d9fc11526780a000011a/train/javascript
+	 */
+
 	constructor(name) {
 		this.name = name;
 	}
@@ -197,19 +189,15 @@ class Thing {
 	}
 
 }
-
 const handler = {
 	get: (obj, prop) => prop in obj ? obj[prop] : console.log('Not found')
 }
 const proxiedClass = new Proxy(class Thing {}, handler);
 
-
-
-
-/* 
- 5 KYU https://www.codewars.com/kata/54a91a4883a7de5d7800009c
- */
 function incrementString(string) {
+	/* 
+	5 KYU https://www.codewars.com/kata/54a91a4883a7de5d7800009c
+	*/
 	console.log(string)
 
 	debugger;
@@ -267,8 +255,6 @@ function incrementString(string) {
 
 }
 
-
 /**
- * @todo
- */
-// https://www.codewars.com/kata/the-lift/train/javascript
+@todo https://www.codewars.com/kata/the-lift/train/javascript
+*/
