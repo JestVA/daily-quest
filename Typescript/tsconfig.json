@@ -2,7 +2,8 @@
 	"compilerOptions": {
 		"lib": [
 			"es2020",
-			"esnext"
+			"esnext",
+			"dom"
 		],
 		"module": "commonjs",
 		"target": "es2020",
