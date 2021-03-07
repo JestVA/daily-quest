@@ -81,3 +81,57 @@ if (typeof something === "string") {
 }
 
 // Any
+
+// you lose type safety, should be used scarcely, only when actually needed
+declare function getValue(key: string): any;
+const str: string = getValue("mystring");
+
+// Void
+// the absence of any type at all, mostly used with functions that do not return anything
+function warnUser(): void {
+	console.log("I have warned u...")
+}
+
+// Null and Undefined 
+// they are subtypes of all other types
+let u: undefined = undefined; // not much else you can assign here
+let n: null = null; // not much else you can assign here
+// we think about null and undefined as subtypes
+// -- strictNullChecks flag (null and undefined can only be assigned to unknown and any types, and in somce cases undefined can be assigned to void)
+
+// Never
+// does not have a reachable return
+function error(message: string): never {
+	throw new Error(message);
+}
+
+// inferred never
+function fail() {
+	return error("Something failed");
+}
+// no reacheable end point
+function infiniteLoop(): never {
+	while (true) { }
+}
+
+// Object
+// this is a type that represents the non-primitive type
+declare function create(o: object | null): void;
+
+create({ prop: 0 }) // ok
+//create("programmer") // string not assignable to object
+//create(false) // boolean not assignable to type object
+
+// YEEES, enabling the flag, worked!
+create(undefined) // should be `undefined is not a subset of null`
+
+// ok so for above example I need --strict-null-checks flag enabeld
+let myVar: number = null;
+myVar = null;
+myVar = undefined;
+myVar = 4;
+
+// Type assertions
+const someValue: unknown = "Am a string";
+const strLength: number = (someValue as string).length;
+const strLength2: number = (<string>someValue).length; // this is equivalent of the as version, but can't be used with JSX!!
