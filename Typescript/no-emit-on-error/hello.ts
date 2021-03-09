@@ -105,3 +105,7 @@ const req3 = {
 } as const; // ok so now this is now readonly
 
 handleRequest(req3.url, req3.method);
+
+// typeof null // "object"
+// we can't do typeof guard against null in Js/TS (* quirk);
+// but we can check for null === null // true
