@@ -109,3 +109,33 @@ handleRequest(req3.url, req3.method);
 // typeof null // "object"
 // we can't do typeof guard against null in Js/TS (* quirk);
 // but we can check for null === null // true
+
+// Type predicates
+
+
+// global type Function
+interface Fish {
+	swim: Function;
+}
+
+interface Bird {
+	fly: Function;
+}
+
+function isFish(pet: Fish | Bird): pet is Fish {
+	return (pet as Fish).swim !== undefined;
+}
+
+// so without this factory, the type is not easily predicated.. fly is never assumed to be type Bird
+function makePet(): Fish | Bird {
+	return {
+		swim: () => { }
+	}
+}
+
+let pet = makePet();
+
+if (isFish(pet))
+	pet.swim()
+else
+	pet.fly();
