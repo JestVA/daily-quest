@@ -126,6 +126,10 @@ function isFish(pet: Fish | Bird): pet is Fish {
 	return (pet as Fish).swim !== undefined;
 }
 
+function isBird(pet: Fish | Bird): pet is Bird {
+	return (pet as Bird).fly !== undefined;
+}
+
 // so without this factory, the type is not easily predicated.. fly is never assumed to be type Bird
 function makePet(): Fish | Bird {
 	return {
@@ -139,3 +143,35 @@ if (isFish(pet))
 	pet.swim()
 else
 	pet.fly();
+
+const zoo: (Fish | Bird)[] = [makePet(), makePet(), makePet()];
+const aquatics = zoo.filter(isFish); // !! nice, acts as Fish type filter...
+const ornythorinc = zoo.filter(isBird);
+
+interface Circle {
+	kind: "circle";
+	radius: number;
+}
+
+interface Square {
+	kind: "square";
+	sideLength: number;
+}
+
+type Shape = Circle | Square;
+
+// simple area function
+//function getArea(shape: Shape) {
+//	if(shape.kind === 'circle')
+//		return Math.PI * shape.radius ** 2;
+//}
+
+// written as a switch
+function getArea(shape: Shape) {
+	switch (shape.kind) {
+		case "circle":
+			return Math.PI * shape.radius ** 2;
+		case "square":
+			return shape.sideLength ** 2;
+	}
+}
