@@ -174,4 +174,4 @@ function getArea(shape: Shape) {
 		case "square":
 			return shape.sideLength ** 2;
 	}
-}
+} 
