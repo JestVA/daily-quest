@@ -148,6 +148,7 @@ const zoo: (Fish | Bird)[] = [makePet(), makePet(), makePet()];
 const aquatics = zoo.filter(isFish); // !! nice, acts as Fish type filter...
 const ornythorinc = zoo.filter(isBird);
 
+
 interface Circle {
 	kind: "circle";
 	radius: number;
@@ -158,6 +159,7 @@ interface Square {
 	sideLength: number;
 }
 
+// discriminated unions
 type Shape = Circle | Square;
 
 // simple area function
@@ -174,4 +176,24 @@ function getArea(shape: Shape) {
 		case "square":
 			return shape.sideLength ** 2;
 	}
-} 
+}
+
+// function type expressions
+
+function greeter(fn: (a: string) => void) {
+	fn("Hello Ts");
+}
+
+function printToConsole(s: string) {
+	console.log(s);
+}
+
+greeter(printToConsole);
+
+// or used with a type alias
+
+type GreetFunction = (a: string) => void;
+
+function greeterV2(fn: GreetFunction) {
+	// ...
+}
