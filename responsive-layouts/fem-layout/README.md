@@ -2,4 +2,6 @@
 
 Taught October 3-4, 2017, at Frontend Masters
 
-Course is located here: https://frontendmasters.com/courses/css-grids-flexbox/ 
+Course is located here: https://frontendmasters.com/courses/css-grids-flexbox/
+
+Test origin unlinked from local - repo. Test
