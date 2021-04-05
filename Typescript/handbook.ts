@@ -10,7 +10,7 @@ let decimal: number = 6;
 let hex: number = 0xf00d;
 let binary: number = 0b1010;
 let octal: number = 0o744;
-let big: bigint = 100n;
+//let big: bigint = 100n;
 
 // String
 let colour: string = "blue";
@@ -135,3 +135,37 @@ myVar = 4;
 const someValue: unknown = "Am a string";
 const strLength: number = (someValue as string).length;
 const strLength2: number = (<string>someValue).length; // this is equivalent of the as version, but can't be used with JSX!!
+
+// making room for good overload
+function len(x: any[] | string)
+{
+	return x.length;
+}
+
+// library style this callers
+
+type User = {
+	isAdmin: Function
+};
+interface DB {
+	filterUsers(filter: (this: User) => boolean): User[];
+}
+
+function getDB(): DB {
+	return { filterUsers: (): User[] => { return [{isAdmin: () => true}, {isAdmin: () => false}] }};
+};
+
+const db = getDB();
+
+const admins = db.filterUsers(function (){
+	return this.isAdmin();
+});
+
+function safeParse(s: string): unknown {
+	return JSON.parse(s);
+}
+
+let beCareful = safeParse("/hexa + eval(true)");
+
+// object is of type unknown, you can't really do anything with it
+beCareful++;
