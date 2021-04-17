@@ -1,6 +1,7 @@
 const PerformanceMeasure = require('performance-measure')
 const hemingwayFibo = require('../fibonacci/hemingway')
 const shakespeareFibo = require('../fibonacci/shakespeare')
+const bretonFibo = require('../fibonacci/breton')
 
 const fiboTests = (iterations, size) => {
   const fibPerf = new PerformanceMeasure()
@@ -13,6 +14,10 @@ const fiboTests = (iterations, size) => {
     fibPerf.start('Shakespeare')
     shakespeareFibo(size)
     fibPerf.end('Shakespeare')
+
+    fibPerf.start('Breton')
+    bretonFibo(size)
+    fibPerf.end('Breton')
   }
 
   console.log(fibPerf.print())
