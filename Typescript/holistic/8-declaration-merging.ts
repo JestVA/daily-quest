@@ -89,3 +89,25 @@ namespace format {
 format(2.314); // $2.31 (this formatter function is awesomez)
 
 format.currency; // $
+
+function isDefined<T>(som: T | undefined): som is T {
+    return typeof som !== 'undefined';
+}
+
+const isNotDefined = <T extends unknown> (som: T | undefined): som is T => {
+    return typeof som === 'undefined';
+} 
+
+// in ts file (not in tsx)
+const someF = <T>(somVal: T): T[] => {
+    return [somVal];
+}
+
+const someGeneric = <T>(value: T) => {
+    return value
+}
+
+// in tsx file
+const someMoreGeneric = <T, >(value: T) => {
+    return value;
+}
